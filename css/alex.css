@@ -1,0 +1,288 @@
+:root {
+	--color-teal : #00695C;
+	--color-black : #212121;
+	--color-red : #c62828;
+	--color-grey : #757575;
+/*	color: var(--color-teal);*/
+}
+
+
+/* HEADER */
+
+
+
+.block-header {
+	background-color: var(--color-black);
+	color: white;
+	width: 100%;
+}
+
+.block-header .inner-header {
+	display: flex;
+	padding: 15px 120px;
+}
+
+.block-header .item-header { /* On donne une taille de 33% aux items pour pouvoir bien positionner les éléments enfants */
+	display: flex;
+	width: 33%;
+}
+
+/* Partie Logos */
+
+.block-header .logos { /* On positionne les logos*/
+	display: flex;
+}
+
+.block-header .logo {
+	height: 75px;
+	margin: auto 0;
+}
+
+.block-header .main-title {
+	font-size: 2rem;
+	margin:auto 0 auto 20px;
+	font-family: 'Segoe UI', sans-serif;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
+
+/* Partie Nav */
+
+.block-header .nav {
+	margin: auto;	
+}
+
+ .block-header ul {
+	display: flex;
+	 margin: auto;
+} 
+
+.block-header li {
+	list-style: none;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.3rem;
+	padding: 10px 20px;
+}
+.block-header a {
+  	display: inline-block;
+	vertical-align: middle;
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	position: relative;
+}
+.block-header a:before {
+	content: "";
+	position: absolute;
+	text-decoration: none;
+	z-index: -1;
+	left: 50%;
+	right: 50%;
+	bottom: -5px;
+	background: #ffffff;
+	height: 2px;
+	transition-property: left, right;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-out;
+}
+.block-header a:hover:before, .block-header a:focus:before, .block-header a:active:before {
+	left: 0;
+	right: 0;
+}
+
+.block-header li:not(:last-child){
+	border-right: solid 2px white ;
+	
+}
+
+/* Partie Search*/
+
+.block-header .search {
+	display: flex;
+}
+.block-header .button {
+	margin: auto;
+	margin-right: 50px;
+}
+
+.block-header .button_search {
+	margin: auto;
+	width: 50px;
+}
+
+.block-header .item-header:last-child {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/* FIN HEADER */
+
+/* SLIDER */
+
+.slider {
+	background-image: url(../res/img/living-room-2732939_1920.jpg);
+	height: 450px;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-shadow: 0px 4px 19px #757575;
+}
+
+.slider .overlay {
+	background-color:rgba(0,0,0,0.33);
+	width: 100%;
+	height:100%;
+	display: flex;
+}
+
+.slider .inner {
+	margin: auto auto 0 auto;
+	display: flex;
+	flex-direction: column;
+	height: 58%;
+}
+
+.slider .slogan {
+	color: white;
+	display: block;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.8rem;
+}
+
+.slider .button {
+	margin: auto;
+	margin-top: 40px;
+}
+
+
+/* FIN SLIDER */
+
+
+/* PARTIE SERVICES */
+
+.row_services {
+	background-image: url(../res/img/furniture-2603068_1920.jpg);
+	width: 100%;
+	background-position:center 74%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-bottom: 35px;
+}
+
+.row_services .overlay {
+	background-color:rgba(0,0,0,0.33);
+	padding:50px 0;
+	width: 100%;
+	height:100%;
+	display: flex
+}
+
+.row_services .inner_services {
+	display: flex;
+	margin: auto;
+}
+
+.row_services img {
+	margin: 0 auto;
+	height: 60px;
+	width: 60px;
+}
+
+.row_services li {
+	margin: 0 30px;
+	display: flex;
+	flex-direction: column;
+}
+
+.row_services p {
+	margin-top: 30px; 
+	font-family: "Segoe UI", sans-serif;
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* FIN SERVICES */
+
+
+/* FOOTER */
+
+.block-footer {
+	background-color: var(--color-black);
+	width: 100%;
+}
+
+.block-footer .inner-footer {
+	display: flex;
+	padding: 20px 240px;
+}
+
+.block-footer .item-footer {
+	display: flex;
+	flex-direction: column;
+	width: 33%;
+	margin:20px 0;
+	padding: 0 30px;
+}
+
+.block-footer .item-footer:nth-child(2){
+	border-left: solid 2px white;
+	border-right: solid 2px white;
+}
+
+.block-footer .news {
+	display: flex;
+	flex-direction: column;
+}
+
+.block-footer .logos_footer {
+	margin-top: 20px;
+}
+
+.block-footer .icon {
+	width: 50px;
+	margin: 0 10px;
+}
+
+.block-footer .icon.facebook {
+	margin-left: 0;
+}
+
+.block-footer h2 {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 20px;
+}
+
+.block-footer p {
+	margin-top: 20px;
+	font-family: Calibri;
+}
+.block-footer a {
+	margin-top: 20px;
+	font-family: Calibri, sans-serif;
+}
+.block-footer a:hover {
+	text-decoration: underline;
+}
+
+.block-footer .tweet_1 {
+	display: flex;
+}
+
+.block-footer .twitter {
+	margin: 20px;
+	width: 30px;
+	height: 30px;
+}
+
+/* FIN FOOTER */

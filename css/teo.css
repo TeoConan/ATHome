@@ -1,0 +1,574 @@
+:root {
+	--color-teal : #00695c;
+	--color-black : #212121;
+	--color-red : #c62828;
+	--color-grey : #757575;
+	
+	--color-teal-black : #005145;
+	/*color: var(--color-teal);*/
+	
+	--box-large-size: 350px;
+	--box-size: 155px;
+}
+
+
+/* Test */
+
+
+
+/* Test */
+
+/*
+-----------------------------------------------------------------------------------------------------------------------
+								INDEX PAGE
+*/
+
+
+.page-home .block-main {
+	display: flex;
+	flex-direction: column;
+}
+
+.page-home .block-main > .inner {
+	width: 1400px;
+	padding: 50px 0;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+
+/* Row */
+.page-home .block-main .row {
+	display: flex;
+}
+
+.page-home .block-main .row > .inner{
+	display: flex;
+	width: 100%;
+	padding: 20px 0;
+}
+
+.page-home .block-main .row > .inner > .list-styles{
+	display: flex;
+	margin: auto;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.page-home .block-main .row > .inner > .list-styles > li.item-style {
+	display: flex;
+}
+
+.page-home .block-main .row > .inner > .list-styles > li.item-style > a {
+	margin: auto;
+}
+
+
+/* Row 3 */
+
+.row-3 > .inner {
+	justify-content: space-between;
+}
+
+/* Customer box */
+
+
+
+.customer-box {
+	height: var(--box-large-size);
+	width:  var(--box-large-size);
+	min-height: var(--box-large-size);;
+	max-height: var(--box-large-size);;
+	min-width: var(--box-large-size);
+	max-width: var(--box-large-size);
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 12px;
+	overflow: hidden;
+	margin-right: 55px;
+	position: relative;
+	background-position: 35% center;
+	background-repeat: no-repeat;
+	background-image: url(../res/img/blue-2705642_1920.jpg);
+	background-size: auto 100%;
+	transition: background-size .2s ease-out;
+}
+
+.customer-box:hover {
+	background-size: auto 102%;
+}
+
+.customer-box > .inner {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	background: rgba(0,0,0,0.5);
+}
+
+.customer-box .elements {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	margin: auto;
+	cursor: pointer;
+	flex-direction: column;
+}
+
+.customer-box .elements > img {
+	margin: 30px 0;
+}
+
+.customer-box h1, h2 {
+	font-family: 'Calibri', sans-serif;
+	font-size: 1.2rem;
+}
+
+.customer-box h1 {text-transform: uppercase;}
+.customer-box h2 {font-weight: 400;}
+
+.customer-box img {
+	width: 55px;
+	height: 55px;
+}
+
+.customer-box .customer-nav {
+	position: absolute;
+	top: 50%;
+	cursor: pointer;
+	transform: translate(0%, -50%);
+}
+
+.customer-box .customer-nav.right-arrow {right: 5%;}
+.customer-box .customer-nav.left-arrow {left: 5%;}
+
+
+
+/* Promo Box */
+
+.promo-box {
+	height: 350px;
+	width: 100%;
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+	background-position: 35% center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(../res/img/living-room-2605530_1920.jpg);
+}
+
+.promo-box > .inner {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	height: 100%;
+	box-sizing: border-box;
+	background: rgba(0,0,0,0.33);
+}
+
+.promo-box h1 {
+	margin: 0 auto;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 500;
+	position: absolute;
+}
+
+.promo-box .promo-list {
+	display: flex;
+	margin: auto 0;
+	padding-top: 40px;
+}
+
+.promo-box .promo-item {
+	margin: 0 40px;
+}
+
+.promo-box .promo-item a {
+	display: inline-block;
+}
+
+.promo-box .promo-item .preview {
+	height: 150px;
+	width: 150px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background-position: center;
+	background-size: cover;
+}
+
+.promo-box .promo-item span {
+	font-family: 'Calibri', sans-serif;
+}
+
+.promo-box .promo-item .title{
+	display: block;
+	margin-top: 20px;
+}
+
+.promo-box .promo-item .price {
+	font-weight: 500;
+}
+
+/* Animation */
+
+/* Border Fade */
+.promo-box .promo-item a .preview {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+  box-shadow: inset 0 0 0 4px transparent, 0 0 1px transparent;
+  /* Hack to improve aliasing on mobile/tablet devices */
+}
+.promo-box .promo-item a:hover .preview, .promo-box .promo-item a:focus, .promo-box .promo-item a:active {
+  box-shadow: inset 0 0 0 4px white, 0 0 1px transparent;
+  /* Hack to improve aliasing on mobile/tablet devices */
+}
+
+
+
+
+
+
+/*								INDEX PAGE
+-----------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+/*								
+-----------------------------------------------------------------------------------------------------------------------     ACCOUNT PAGE*/
+
+/* Profile */
+
+:root {
+	--profile-size : 250px;
+}
+
+
+.page-account .profile {
+	width: 100%;
+	position: relative;
+	background-color: var(--color-black);
+	display: flex;
+	box-shadow: 0px 4px 19px #757575;
+}
+
+.page-account .profile > .preview {
+	width: 100%;
+	margin: 0 auto;
+	height: 300px;
+	max-width: 1920px;
+	background-image: url(../res/img/make-up-2137800.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.page-account .profile .customer {
+	height: var(--profile-size);
+	width: var(--profile-size);
+	border-radius: 50%;
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	transform: translate(50%, 50%);
+	background-image: url(../res/img/blue-2705642_1920.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+
+.page-account .block-main {
+	display: flex;
+	flex-direction: column;
+	padding-top: calc(var(--profile-size)*0.75);
+	padding-bottom: calc(var(--profile-size)*0.25);
+}
+
+.page-account .block-main > .inner {
+	margin: auto;
+}
+
+
+
+/* Boxs */
+
+.page-account .row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.page-account .row > * {
+	margin: 35px;
+}
+
+.page-account .box.large span.title {
+	font-size: 2rem;
+}
+
+.page-account .box.large span.sub-title {
+	font-size: 1.1rem;
+}
+
+
+/* First Box */
+
+.page-account .box-info {
+	overflow: hidden;
+	height: var(--box-large-size);
+	width: var(--box-large-size);
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.page-account .box-info > div {
+	margin: 15px 5px;
+}
+
+.page-account .box-info > .separator {
+	height: 2px;
+	width: 60%;
+	background-color: var(--color-teal);
+}
+
+.page-account .box-info > div {
+	display: flex;
+}
+
+.page-account .box-info img  {
+	height: 35px;
+	fill : var(--color-teal);
+}
+
+.page-account .box-info h1, .page-account .box-info h2, .page-account .box-info p{
+	color: black;
+	font-family: 'Segoe UI', sans-serif;
+	padding-left: 5px;
+}
+
+.page-account .box-info h1  {
+	font-size: 3rem;
+	font-weight: 600;
+}
+
+.page-account .box-info h2  {
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+.page-account .box-info p  {
+	font-family: 'Calibri', sans-serif;
+	margin: auto 0;
+	padding: 0;
+	margin-left: 15px;
+	font-size: 1.25rem;
+}
+
+
+
+/*								ACCOUNT PAGE
+-----------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*								
+-----------------------------------------------------------------------------------------------------------------------     CATEGORY PAGE*/
+
+
+
+
+
+.page-category .style {
+	width: 100%;
+	height: 350px;
+	background-position: 25% center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.page-category .style .inner {
+	height: 100%;
+	display: flex;
+	background-color: rgba(0,0,0,0.33);
+	
+}
+
+.page-category .style h1{
+	margin: auto;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 2.5rem;
+}
+
+
+
+
+
+/*								CATEGORY PAGE
+-----------------------------------------------------------------------------------------------------------------------     */
+
+
+
+
+
+/*
+-----------------------------------------------------------------------------------------------------------------------
+								BOX ELEMENT
+*/
+
+:root {
+	
+}
+
+
+/* Classic */
+.box {
+	height: var(--box-size);
+	width:  var(--box-size);
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+	background-position: center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	cursor: pointer;
+
+	transition: background-size .2s ease-out;
+	
+}
+
+.box:hover {
+	background-size: auto 105%;
+}
+
+.box > .inner {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	background: rgba(0,0,0,0.33);
+}
+
+.box > .inner > .title {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 22px;
+	color: white;
+	margin: auto;
+}
+
+.box .sub-title {
+	position: absolute;
+    bottom: 10%;
+    right: 50%;
+    transform: translate(50%, 00%);
+    color: white;
+	font-family: 'Calibri', sans-serif;
+	white-space: nowrap;
+}
+
+/* Classic */
+
+
+/* Large */
+.box.large {
+	height: var(--box-large-size);
+	width: var(--box-large-size);
+}
+
+.box.large .title {
+	font-weight: 600;
+}
+/* Large */
+
+/*Animation*/
+
+/*.box .title {
+  display: inline-block;
+  vertical-align: middle;
+	transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+}
+
+.box .title:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: -3px;
+  background: white;
+  height: 2px;
+  transition-property: left, right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.box:hover .title:before, .box:hover .title:focus:before, .box:hover .title:active:before {
+  left: 0;
+  right: 0;
+}*/
+
+/*
+								BOX ELEMENT
+-----------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+/*
+-----------------------------------------------------------------------------------------------------------------------
+								BUTTON ELEMENT
+*/
+
+
+
+.button {
+	height: 45px;
+	width: 155px;
+	display: flex !important;
+	border-radius: 7px;
+	background-color: var(--color-teal);
+	border: 2px solid var(--color-teal-black);
+	vertical-align: middle;
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	overflow: hidden;
+	transition-duration: 0.3s;
+	transition-property: color, background-color;
+}
+
+.button span {
+	margin: auto;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.1rem;
+}
+
+.button:hover, .button:focus, .button:active {
+	background-color: #f5f5f5;
+	border-color: black;
+	color: black;
+}
+
+/*
+								BUTTON ELEMENT
+-----------------------------------------------------------------------------------------------------------------------
+*/
+

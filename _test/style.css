@@ -1,0 +1,174 @@
+.content {
+	border: 1px solid black;
+	margin: 50px;
+}
+
+.box {
+	margin: 50px;
+}
+
+.button {
+	margin: 50px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+
+:root {
+	--color-teal : #00695c;
+	--color-black : #212121;
+	--color-red : #c62828;
+	--color-grey : #757575;
+	
+	--color-teal-black : #005145;
+	/*color: var(--color-teal);*/
+}
+
+
+
+/*
+-----------------------------------------------------------------------------------------------------------------------
+								BOX ELEMENT
+*/
+
+:root {
+	--box-large-size: 350px;
+	--box-size: 155px;
+}
+
+
+/* Classic */
+.box {
+	height: var(--box-size);
+	width:  var(--box-size);
+	display: inline-block;
+	text-decoration: none;
+	background-color: red;
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	
+}
+
+.box > .inner {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	background: rgba(0,0,0,0.33);
+}
+
+.box > .inner > .title {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 22px;
+	color: white;
+	margin: auto;
+}
+
+.box .sub-title {
+	position: absolute;
+    bottom: 10%;
+    right: 50%;
+    transform: translate(50%, 00%);
+    color: white;
+	font-family: 'Calibri', sans-serif;
+}
+/* Classic */
+
+
+/* Large */
+.box.large {
+	height: var(--box-large-size);
+	width: var(--box-large-size);
+}
+
+.box.large .title {
+	font-weight: 600;
+}
+/* Large */
+
+/*Animation*/
+.box .title {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+}
+
+.box .title:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: -3px;
+  background: white;
+  height: 2px;
+  transition-property: left, right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.box:hover .title:before, .box:hover .title:focus:before, .box:hover .title:active:before {
+  left: 0;
+  right: 0;
+}
+
+/*
+								BOX ELEMENT
+-----------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+/*
+-----------------------------------------------------------------------------------------------------------------------
+								BUTTON ELEMENT
+*/
+
+
+
+.button {
+	height: 45px;
+	width: 155px;
+	display: flex;
+	border-radius: 7px;
+	background-color: var(--color-teal);
+	border: 2px solid var(--color-teal-black);
+	vertical-align: middle;
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	overflow: hidden;
+	transition-duration: 0.3s;
+	transition-property: color, background-color;
+}
+
+.button span {
+	margin: auto;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.1rem;
+}
+
+.button:hover, .button:focus, .button:active {
+	background-color: #f5f5f5;
+	border-color: black;
+	color: black;
+}
+
+/*
+								BUTTON ELEMENT
+-----------------------------------------------------------------------------------------------------------------------
+*/
