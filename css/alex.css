@@ -7,9 +7,92 @@
 }
 
 
+
+/* POP-UP */
+
+.pop-up {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	z-index: 99999;
+}
+
+.body_pop-up {
+	margin: auto;
+	background-color: var(--color-black);
+	display: flex;
+	width: 25vw;
+	padding: 25px 0;
+}
+
+.body_pop-up .inner {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.body_pop-up .logo {
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+.body_pop-up .formulaire {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.body_pop-up form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.body_pop-up p {
+	margin: 20px auto;
+	padding-bottom: 5px;
+}
+
+.body_pop-up .button {
+	margin: 50px auto 25px;
+}
+
+.body_pop-up label {
+	color: grey;
+}
+
+.body_pop-up input {
+	background-color: var(--color-black);
+	border: none;
+	color: white;
+}
+
+.body_pop-up input::placeholder{
+	color: white;
+}
+
+.body_pop-up .border {
+	height: 1px;
+	width:250px;
+	margin: auto;
+	background-color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+/* FIN POP-UP */
+
+
 /* HEADER */
-
-
 
 .block-header {
 	background-color: var(--color-black);
@@ -114,7 +197,10 @@
 	justify-content: flex-end;
 }
 
+
 /* FIN HEADER */
+
+
 
 /* SLIDER */
 
@@ -125,7 +211,6 @@
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	box-shadow: 0px 4px 19px #757575;
 }
 
 .slider .overlay {
@@ -154,8 +239,8 @@
 	margin-top: 40px;
 }
 
-
 /* FIN SLIDER */
+
 
 
 /* PARTIE SERVICES */
@@ -166,7 +251,6 @@
 	background-position:center 74%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	margin-bottom: 35px;
 }
 
 .row_services .overlay {
@@ -201,18 +285,8 @@
 	font-size: 1rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* FIN SERVICES */
+
 
 
 /* FOOTER */
