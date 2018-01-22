@@ -459,7 +459,7 @@
 /* Prix total */
 .page-cart .total-price {
 	text-align: center;
-	margin: 15px auto 8px auto;
+	margin: 50px auto 50px auto;
 	padding: 10px;
 	font-family: 'Segoe UI', sans-serif;
 	font-weight: 500;
@@ -482,7 +482,6 @@
 .page-cart .cart-items-list {
 	display: flex;
 	flex-direction: column;
-	height: 500px;
 }
 
 .page-cart .cart-item {
@@ -524,7 +523,6 @@
 
 /* Preview */
 .page-cart .cart-item .preview {
-	background-color: red;
 	border-radius: 10px;
 	width: 150px;
 	height: 150px;
@@ -579,6 +577,20 @@
     padding: 5px;
 }
 
+/* Amount */
+.page-cart .cart-item .amount {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(0, -50%);
+}
+
+.page-cart .cart-item .amount p {
+	font-weight: 400;
+	font-size: 1.1rem;
+	font-family: 'Calibri', sans-serif;
+}
+
 /* Close */
 
 .page-cart .cart-item .close {
@@ -589,8 +601,184 @@
 	padding: 5px;
 }
 
+.page-cart .command {
+	display: flex;
+	margin: 75px 0;
+}
+
+.page-cart .button {
+	margin: auto;
+}
+
 /*
 								CART PAGE
+-----------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+/*
+-----------------------------------------------------------------------------------------------------------------------
+								CHECKOUT PAGE
+*/
+
+
+.page-checkout {
+	background-color: #f5f5f5;
+}
+
+.page-checkout .block-main {
+	display: flex;
+    flex-direction: column;
+}
+
+.page-checkout .block-main > .inner {
+    margin: auto;
+    display: flex;
+}
+
+/* Slider */
+.page-checkout .slider {
+	background-image: url(../res/img/euro-pallets-1150267_1920.jpg);
+}
+
+.page-checkout .slider > .overlay {
+	background-color: rgba(0,0,0,0.4);
+}
+
+
+/* Card */
+.page-checkout .card-checkout {
+	width: 750px;
+    margin: 50px auto;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+	background-color: #ffffff;
+    padding: 25px;
+}
+
+.page-checkout .card-checkout h1 {
+	color: #212121;
+	font-weight: 500;
+	text-align: center;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.5rem;
+	margin: 25px 0 75px 0;
+}
+
+.page-checkout p,
+.page-checkout td,
+.page-checkout .card-checkout label,
+.page-checkout .pay-form input {
+	font-family: 'Calibri', sans-serif;
+	font-size: 1.1rem;
+}
+
+.page-checkout .card-checkout p {
+	color: #212121;
+	padding: 5px 15px;
+	font-weight: 600;
+	font-size: 1.2rem;
+	font-style: italic;
+	
+}
+
+.page-checkout .card-checkout .button {
+	margin: auto;
+}
+
+/* Table */
+
+.page-checkout .articles {
+	padding: 20px 20px 35px 35px;
+	width: 100%;
+}
+
+.page-checkout .articles .label {
+	padding: 10px 0 10px 20px;
+}
+
+.page-checkout .articles .price {
+	font-weight: bold;
+	text-align: right;
+}
+
+.page-checkout .articles .price span {
+	margin-left: 3px;
+	font-size: 0.9rem;
+}
+
+.page-checkout .articles .total-price p {
+	padding-left: 0;
+	padding-top: 20px;
+}
+
+
+/* Form card */
+
+.page-checkout .pay-form {
+	margin: auto;
+	padding: 25px 0;
+}
+
+.page-checkout .pay-form .row {
+	display: flex;
+	margin: 20px 0;
+	width: 100%;
+}
+
+.page-checkout .pay-form .input {
+	display: flex;
+	flex-direction: column;
+	margin-right: 25px;
+}
+
+
+/* Input style */
+
+.page-checkout .pay-form label {
+	margin-bottom: 10px;
+}
+
+.page-checkout .pay-form input{
+	border: none;
+	border-bottom: 1px solid #616161;
+	padding: 3px;
+}
+
+.page-checkout .pay-form .date input {
+	padding: 0;
+	padding-bottom: 2px;
+}
+
+/* Button */
+.page-checkout .pay-form .card_valid {
+	display: flex;
+}
+
+.page-checkout .pay-form .button {
+	height: 35px;
+	margin: auto;
+	width: auto;
+	padding: 0 15px;
+	border: 1px solid var(--color-teal-black);
+	border-radius: 5px;
+}
+
+.page-checkout .command .button {
+	margin: 25px auto;
+}
+
+.page-checkout .pay-form .button span {
+	font-size: 0.8rem;
+	border: 1px; 
+}
+
+/*
+								CHECKOUT PAGE
 -----------------------------------------------------------------------------------------------------------------------
 */
 

@@ -5,110 +5,107 @@ class CartItem
 	
 	//Content
 	private $_id;			//ID HTML
-	public $image;			//Image background
+	private $_relation;
+	private $_piece;
+	
+	private $_attr;
+	public $image;			//Image preview
 	public $ref;
+	public $title;
+	public $price;
 	public $brand;
 	public $services;
 	public $descr;
 	
 	//Service
 	public $livraison;
+	public $donation;
+	public $made;
+	public $eco;
 	
 	
 	//						Texte à afficher, image de background, type : default, large ou custom
-	public function __construct($text, $image="", $type=Box::BOX_TYPE_DEFAULT) {
+	public function __construct($cartrelation) {
 		
-		$this->title = $text;
-		$this->image = $image;
-		$this->type = $type;
-		switch($type){
-			case Box::BOX_TYPE_DEFAULT :
-				$this->class = 'box';
-				break;
-				
-			case Box::BOX_TYPE_LARGE :
-				$this->class = 'box large';
-				break;
-				
-			case Box::BOX_TYPE_CUSTOM :
-				$this->class = 'box';
-				break;
-		}
 	}
 	
 	//Obtenir le HTML une fois les paramètres rentrés
 	public function getOutput(){
 		$output = "";
-		$this->_attr = "";
-		
-		//Suivi
 		
 		
-		//ATTR
 		if (isset($this->_id) && !empty($this->_id)){
-			$this->_attr .= 'id="' . $this->_id . '" ';
+			$this->_attr = 'id="' . $this->_id . '" ';
 		}
 		
-		if (isset($this->link) && !empty($this->link)){
-			$this->_attr .= 'href="' . $this->link . '" ';
-		}
+		$output .= '
 		
-		$this->_attr .= 'class="' . $this->class . '" ';
-		$this->_attr .= 'style="' . $this->addstyle . ' background-image : url(\'' . $this->image . '\');"';
+		<div class="cart-item" ' . $this->_attr . '>
+					<div class="inner">
+						
+						<div class="price">
+							<h1>' . $this->price . '€</h1>
+						</div>
+						
+						<div class="separator"></div>						
+						<div class="preview">
+						</div>
+						
+						<div class="text">
+							<h2>' . $this->price . '</h2>
+							<p>' . $this->descr . '</p>
+						</div>
+		';
 		
-		if (isset($this->click) && !empty($this->click)){
-			$this->_attr .= 'onClick="' . $this->click . '" ';
-		}
+		$output .= '<div class="services">';
 		
-		//Si pas de lien, transformer en div
-		if (isset($this->link) && !empty($this->link)){
+		if ($this->donation){
 			$output .= '
-				<a ' . $this->_attr . '>
-			';
-		} else {
-			$output .= '
-				<div ' . $this->_attr . '>
+			<div class="item">
+				<img src="res/icons/ic_monetization_on_white_24px.svg"/>
+			</div>
 			';
 		}
 		
-		if (isset($this->bg_color) && !empty($this->bg_color)){} else {
-			$this->bg_color = 'rgba(0,0,0,0)';
+		if ($this->eco){
+			$output .= '
+			<div class="item">
+				<img src="res/icons/ic_local_florist_white_24px.svg"/>
+			</div>
+			';
+		}
+		
+		if ($this->livraison){
+			$output .= '
+			<div class="item">
+				<img src="res/icons/ic_directions_car_white_24px.svg"/>
+			</div>
+			';
+		}
+		
+		if ($this->made){
+			$output .= '
+			<div class="item">
+				<img src="res/icons/ic_pin_drop_white_24px.svg"/>
+			</div>
+			';
 		}
 		
 		
 		$output .= '
-			<div class="inner" style="background: ' . $this->bg_color . ';">
-				<span class="title">' . $this->title . '</span>
-			</div>
-		';
-		
-		if (isset($this->subtitle) && !empty($this->subtitle)){
-			$output .= '<span class="sub-title">' . $this->subtitle . '</span>';
-		}
-
-		
-		//Si pas de lien, transformer en div
-		if (isset($this->link) && !empty($this->link)){
-			$output .= '
-				</a>
-			';
-		} else {
-			$output .= '
+						</div>
+						
+						<div class="amount">
+							<p>Quantité : 2</p>
+						</div>
+						
+						<div class="close">
+							<img src="res/icons/ic_clear_black_24px.svg"/>
+						</div>
+					</div>
 				</div>
-			';
-		}
 		
-		
-		/*$output .= '
-		<a href="" class="box large">
-    		<div class="inner">
-    			<span class="title">Commandes</span>
-    		</div>
-    		
-    		<span class="sub-title">Suivi &amp; Historique</span>
-    	</a>
-		';*/
-		
+		';
 		return($output);
 	}
 	
@@ -145,24 +142,10 @@ class CartItem
 	public function getID(){return $this->_id;}
 	public function setID($id){$this->_id = $id;}
 	
-	//Couleur et opacité du background
-	public function setBackground($r, $v, $b){
-		$this->bg_color = 'rgba(' . $r . ', ' . $v . ', ' . $b . ', 0.5)';
-	}
-	
 	/* Doc */
 	
 	private function test(){
 		
-		//Instance de l'objet
-		$asiat = new Box('Asiatique', "res/img/style_asiatique.jpg");
-		//Définir le lien
-		$asiat->link = "/product.php?style=asiatique";
-		//Défini la couleur du background, l'opacité est de 0.5
-		$asiat->setBackground(107, 11, 12);
-		//Affichage
-
-		echo($asiat->getOutput());
 	}
 }
 ?>

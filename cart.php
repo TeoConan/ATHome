@@ -22,7 +22,7 @@ require("res/elements/cart_item.php");
 			<div class="inner">
 				<h2 class="slogan"> L'ergonomie à porté de main </h2>
 				<?php 
-				$command = new Button('Commander','#');
+				$command = new Button('Commander','checkout.php');
 				echo ($command->getOutput());
 				?>
 			</div>
@@ -58,6 +58,18 @@ require("res/elements/cart_item.php");
 							<div class="item">
 								<img src="res/icons/ic_pin_drop_white_24px.svg"/>
 							</div>
+							
+							<div class="item">
+								<img src="res/icons/ic_local_florist_white_24px.svg"/>
+							</div>
+							
+							<div class="item">
+								<img src="res/icons/ic_directions_car_white_24px.svg"/>
+							</div>
+						</div>
+						
+						<div class="amount">
+							<p>Quantité : 2</p>
 						</div>
 						
 						<div class="close">
@@ -65,6 +77,46 @@ require("res/elements/cart_item.php");
 						</div>
 					</div>
 				</div>
+				
+				<div class="cart-item">
+					<div class="inner">
+						
+						<div class="price">
+							<h1>70€</h1>
+						</div>
+						
+						<div class="separator"></div>						
+						<div class="preview">
+						</div>
+						
+						<div class="text">
+							<h2>Fauteuil Gauthier 588F5</h2>
+							<p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+						</div>
+						
+						<div class="services">
+							<div class="item">
+								<img src="res/icons/ic_monetization_on_white_24px.svg"/>
+							</div>
+							
+							<div class="item">
+								<img src="res/icons/ic_directions_car_white_24px.svg"/>
+							</div>
+						</div>
+						
+						<div class="amount">
+							<p>Quantité : 2</p>
+						</div>
+						
+						<div class="close">
+							<img src="res/icons/ic_clear_black_24px.svg"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="command">
+				<?php	echo ($command->getOutput());		?>
 			</div>
 		</div>
 	</main>
