@@ -6,10 +6,117 @@
 /*	color: var(--color-teal);*/
 }
 
+/* POP-UP */
+
+.block-header .pop-up {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	display: flex;	
+	z-index: 100;
+	font-family: Calibri, sans-serif;
+	font-size: 1rem;
+	
+}
+
+.block-header .body_pop-up {
+	margin: auto;
+	background-color: var(--color-black);
+	display: flex;
+	width: 25vw;
+	padding: 25px 0;
+	z-index: 99;border-radius: 5px;
+
+}
+
+ .block-header #overlay{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index:98;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.block-header .body_pop-up .inner {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.block-header .body_pop-up .logo {
+	margin: 0 auto 30px;
+}
+
+.block-header .body_pop-up .formulaire {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.block-header .body_pop-up form {
+	display: flex;
+	flex-direction: column;
+}
+
+.block-header .body_pop-up .mail,
+.block-header .body_pop-up .motdepasse {
+	border-bottom: 2px solid grey;
+}
+
+.block-header .body_pop-up p {
+	width: 100%;
+	margin: 10px auto;
+}
+
+.block-header .body_pop-up .motdepasse {
+	margin-top: 15px;
+}
+
+.block-header .body_pop-up #text_connect {
+	opacity: 0;
+	text-align: center;
+	color: #E53935;
+	font-family: Calibri, 'sans-serif';
+	margin-top: 15px;
+	
+}
+
+
+.block-header .body_pop-up .button {
+	margin: 10px auto 25px;
+}
+
+.block-header .body_pop-up label {
+	color: grey;
+	font-style: italic;
+}
+
+.block-header .body_pop-up input {
+	background-color: var(--color-black);
+	border: none;
+	color: white;
+	width: 155px;
+}
+
+.block-header .body_pop-up input::placeholder{
+	color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* FIN POP-UP */
+
 
 /* HEADER */
-
-
 
 .block-header {
 	background-color: var(--color-black);
@@ -63,7 +170,7 @@
 	font-size: 1.3rem;
 	padding: 10px 20px;
 }
-.block-header a {
+.block-header .nav a {
   	display: inline-block;
 	vertical-align: middle;
 	transform: perspective(1px) translateZ(0);
@@ -114,7 +221,10 @@
 	justify-content: flex-end;
 }
 
+
 /* FIN HEADER */
+
+
 
 /* SLIDER */
 
@@ -125,7 +235,6 @@
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	box-shadow: 0px 4px 19px #757575;
 }
 
 .slider .overlay {
@@ -154,8 +263,8 @@
 	margin-top: 40px;
 }
 
-
 /* FIN SLIDER */
+
 
 
 /* PARTIE SERVICES */
@@ -166,7 +275,6 @@
 	background-position:center 74%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	margin-bottom: 35px;
 }
 
 .row_services .overlay {
@@ -201,18 +309,8 @@
 	font-size: 1rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* FIN SERVICES */
+
 
 
 /* FOOTER */
