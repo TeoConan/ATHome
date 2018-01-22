@@ -9,7 +9,7 @@ require("res/elements/button.php");
 <html>
 <head>
 <meta charset="utf-8">
-	<title>ATHome - Compte</title>
+	<title>ATHome - Catégories</title>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="icon" type="image/png" href="res/icons/logo.ico" />
 </head>

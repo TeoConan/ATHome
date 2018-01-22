@@ -37,12 +37,7 @@ require("res/elements/button.php");
 					
 					<div class="livraison">
 						<img src="res/icons/ic_pin_drop_green_24px.svg"/>
-						<p>2 moyen de livraison</p>
-					</div>
-					
-					<div class="paid">
-						<img src="res/icons/ic_credit_card_green_24px.svg"/>
-						<p>1 moyen de paiment enregistré</p>
+						<p>1 moyen de livraison</p>
 					</div>
 					
 					<div class="cart">
@@ -55,7 +50,8 @@ require("res/elements/button.php");
 				
 				$adresses = new Box('Adresse', "res/img/japan-2014618_1920.jpg" , Box::BOX_TYPE_LARGE);
 				$adresses->subtitle = 'Livraisons & cadeaux';
-				
+				$adresses->link = '/adresses';
+				$adresses->setBackground(0,0,0);
 				echo($adresses->getOutput());
 				
 				?>
@@ -66,13 +62,15 @@ require("res/elements/button.php");
 				
 				$command = new Box('Commandes', "res/img/truck-2591007_1920.jpg", Box::BOX_TYPE_LARGE);
 				$command->subtitle = 'Suivi & Historique';
-				
+				$command->link = '/commands';
+				$command->setBackground(0,0,0);
 				echo($command->getOutput());
 				
 				
-				$paid = new Box('Paiment', "res/img/queen-937501_1920.jpg" , Box::BOX_TYPE_LARGE);
+				$paid = new Box('Paiement', "res/img/queen-937501_1920.jpg" , Box::BOX_TYPE_LARGE);
 				$paid->subtitle = 'Carte bancaire & Codes';
-				
+				$paid->link = '/paid';
+				$paid->setBackground(0,0,0);
 				echo($paid->getOutput());
 				
 				?>
@@ -83,13 +81,15 @@ require("res/elements/button.php");
 				
 				$cart = new Box('Panier', "res/img/basket-2246734_1920.jpg", Box::BOX_TYPE_LARGE);
 				$cart->subtitle = 'Promotions & Disponibilité';
-				
+				$cart->link = '/cart';
+				$cart->setBackground(0,0,0);
 				echo($cart->getOutput());
 				
 				
 				$settings = new Box('Paramètres', "res/img/cup-of-coffee-1280537_1920.jpg" , Box::BOX_TYPE_LARGE);
 				$settings->subtitle = 'Compte & Confidentialité';
-				
+				$settings->link = '/settings';
+				$settings->setBackground(0,0,0);
 				echo($settings->getOutput());
 				
 				?>
