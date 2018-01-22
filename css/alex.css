@@ -6,79 +6,103 @@
 /*	color: var(--color-teal);*/
 }
 
-
-
 /* POP-UP */
 
-.pop-up {
+.block-header .pop-up {
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	display: flex;
-	z-index: 99999;
+	display: flex;	
+	z-index: 100;
+	font-family: Calibri, sans-serif;
+	font-size: 1rem;
+	
 }
 
-.body_pop-up {
+.block-header .body_pop-up {
 	margin: auto;
 	background-color: var(--color-black);
 	display: flex;
 	width: 25vw;
 	padding: 25px 0;
+	z-index: 99;border-radius: 5px;
+
 }
 
-.body_pop-up .inner {
+ .block-header #overlay{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index:98;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.block-header .body_pop-up .inner {
 	margin: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.body_pop-up .logo {
-	margin: 0 auto;
-	margin-bottom: 50px;
+.block-header .body_pop-up .logo {
+	margin: 0 auto 30px;
 }
 
-.body_pop-up .formulaire {
+.block-header .body_pop-up .formulaire {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.body_pop-up form {
+.block-header .body_pop-up form {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 }
 
-.body_pop-up p {
-	margin: 20px auto;
-	padding-bottom: 5px;
+.block-header .body_pop-up .mail,
+.block-header .body_pop-up .motdepasse {
+	border-bottom: 2px solid grey;
 }
 
-.body_pop-up .button {
-	margin: 50px auto 25px;
+.block-header .body_pop-up p {
+	width: 100%;
+	margin: 10px auto;
 }
 
-.body_pop-up label {
+.block-header .body_pop-up .motdepasse {
+	margin-top: 15px;
+}
+
+.block-header .body_pop-up #text_connect {
+	opacity: 0;
+	text-align: center;
+	color: #E53935;
+	font-family: Calibri, 'sans-serif';
+	margin-top: 15px;
+	
+}
+
+
+.block-header .body_pop-up .button {
+	margin: 10px auto 25px;
+}
+
+.block-header .body_pop-up label {
 	color: grey;
+	font-style: italic;
 }
 
-.body_pop-up input {
+.block-header .body_pop-up input {
 	background-color: var(--color-black);
 	border: none;
 	color: white;
+	width: 155px;
 }
 
-.body_pop-up input::placeholder{
-	color: white;
+.block-header .body_pop-up input::placeholder{
+	color: grey;
 }
 
-.body_pop-up .border {
-	height: 1px;
-	width:250px;
-	margin: auto;
-	background-color: grey;
-}
 
 
 
@@ -146,7 +170,7 @@
 	font-size: 1.3rem;
 	padding: 10px 20px;
 }
-.block-header a {
+.block-header .nav a {
   	display: inline-block;
 	vertical-align: middle;
 	transform: perspective(1px) translateZ(0);

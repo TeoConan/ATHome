@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="../../css/style.css">
-
-
 <footer class="block-footer">
 	<div class="inner-footer">
 		<div class="item-footer">
