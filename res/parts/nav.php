@@ -1,8 +1,10 @@
 <header class="block-header">
+
 <!-- Début Pop-up -->
 
 <div class="pop-up" id="pop-up" style="display: none">
 	<div class="overlay" id="overlay" onClick="Overlay()"></div>
+
 	<div class="body_pop-up">
 		<div class="inner">
 			<img src="res/icons/logo_black.svg" class="logo" alt="logo">
