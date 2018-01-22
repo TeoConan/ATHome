@@ -55,7 +55,7 @@
 						<a class="nouveautes"  href="#">Nouveautés</a>
 					</li>
 					<li>
-						<a class="panier" href="#">Panier</a>
+						<a class="panier" href="cart.php">Panier</a>
 					</li>
 				</ul>
 			</nav>

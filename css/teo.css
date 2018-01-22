@@ -246,7 +246,8 @@
 
 
 /*								
------------------------------------------------------------------------------------------------------------------------     ACCOUNT PAGE*/
+-----------------------------------------------------------------------------------------------------------------------     
+								ACCOUNT PAGE*/
 
 /* Profile */
 
@@ -328,6 +329,9 @@
 	width: var(--box-large-size);
 	padding: 5px;
 	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 .page-account .box-info > div {
@@ -382,7 +386,8 @@
 
 
 /*								
------------------------------------------------------------------------------------------------------------------------     CATEGORY PAGE*/
+-----------------------------------------------------------------------------------------------------------------------
+								CATEGORY PAGE*/
 
 
 
@@ -419,6 +424,363 @@
 -----------------------------------------------------------------------------------------------------------------------     */
 
 
+
+/*
+-----------------------------------------------------------------------------------------------------------------------
+								CART PAGE
+*/
+
+.page-cart .block-main h1,
+.page-cart .block-main h2,
+.page-cart .block-main p {
+	color: black;
+}
+
+.page-cart {
+	
+}
+
+.page-cart .block-main {
+	display: flex;
+}
+
+.page-cart .block-main > .inner  {
+	width: 1400px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.page-cart .slider {
+	background-image: url(../res/img/basket-2246734_1920.jpg);
+}
+
+
+/* Prix total */
+.page-cart .total-price {
+	text-align: center;
+	margin: 50px auto 50px auto;
+	padding: 10px;
+	font-family: 'Segoe UI', sans-serif;
+	font-weight: 500;
+	border-bottom: 1px solid black;
+}
+
+.page-cart .total-price span {
+	line-height: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+}
+
+
+
+.page-cart .price {
+	
+}
+
+.page-cart .cart-items-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.page-cart .cart-item {
+	margin: 25px 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0px 15px 30px 4px rgba(0,0,0,0.15);
+    padding: 25px;
+	display: flex;
+	height: 150px;
+	overflow: hidden;
+}
+
+.page-cart .cart-item > .inner{
+	display: flex;
+	width: 100%;
+	position: relative;
+}
+
+/* Price */
+.page-cart .cart-item .price {
+	display: flex;
+	margin: 0 25px;
+}
+
+.page-cart .cart-item .price h1 {
+	margin: auto;
+	font-family: 'Segoe UI', sans-serif;
+	font-weight: 500;
+}
+
+/* Separator */
+.page-cart .cart-item .separator {
+	width: 2px;
+	margin-left: 25px;
+	margin-right: 50px;
+	background-color: black;
+}
+
+/* Preview */
+.page-cart .cart-item .preview {
+	border-radius: 10px;
+	width: 150px;
+	height: 150px;
+	background-image: url(../res/img/element_2.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.page-cart .cart-item .preview:after {
+	content: "";
+  	display: block;
+ 	padding-right: 100%;
+}
+
+/* Text */
+
+.page-cart .cart-item .text {
+	margin-left: 50px;
+	padding: 20px 0;
+	max-width: 55%;
+}
+
+.page-cart .cart-item .text h2 {
+	margin-bottom: 5px;
+	font-weight: 400;
+	font-size: 1.4rem;
+}
+
+.page-cart .cart-item .text p {
+	font-weight: 400;
+	font-size: 1.1rem;
+    color: rgba(0,0,0,0.65);
+	font-family: 'Calibri', sans-serif;
+}
+
+/* Services */
+
+.page-cart .cart-item .services {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: flex;
+}
+
+.page-cart .cart-item .services .item {
+	margin: 0 8px;
+}
+
+.page-cart .cart-item .services .item img {
+	background-color: var(--color-teal);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* Amount */
+.page-cart .cart-item .amount {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(0, -50%);
+}
+
+.page-cart .cart-item .amount p {
+	font-weight: 400;
+	font-size: 1.1rem;
+	font-family: 'Calibri', sans-serif;
+}
+
+/* Close */
+
+.page-cart .cart-item .close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	padding: 5px;
+}
+
+.page-cart .command {
+	display: flex;
+	margin: 75px 0;
+}
+
+.page-cart .button {
+	margin: auto;
+}
+
+/*
+								CART PAGE
+-----------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+/*
+-----------------------------------------------------------------------------------------------------------------------
+								CHECKOUT PAGE
+*/
+
+
+.page-checkout {
+	background-color: #f5f5f5;
+}
+
+.page-checkout .block-main {
+	display: flex;
+    flex-direction: column;
+}
+
+.page-checkout .block-main > .inner {
+    margin: auto;
+    display: flex;
+}
+
+/* Slider */
+.page-checkout .slider {
+	background-image: url(../res/img/euro-pallets-1150267_1920.jpg);
+}
+
+.page-checkout .slider > .overlay {
+	background-color: rgba(0,0,0,0.4);
+}
+
+
+/* Card */
+.page-checkout .card-checkout {
+	width: 750px;
+    margin: 50px auto;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+	background-color: #ffffff;
+    padding: 25px;
+}
+
+.page-checkout .card-checkout h1 {
+	color: #212121;
+	font-weight: 500;
+	text-align: center;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.5rem;
+	margin: 25px 0 75px 0;
+}
+
+.page-checkout p,
+.page-checkout td,
+.page-checkout .card-checkout label,
+.page-checkout .pay-form input {
+	font-family: 'Calibri', sans-serif;
+	font-size: 1.1rem;
+}
+
+.page-checkout .card-checkout p {
+	color: #212121;
+	padding: 5px 15px;
+	font-weight: 600;
+	font-size: 1.2rem;
+	font-style: italic;
+	
+}
+
+.page-checkout .card-checkout .button {
+	margin: auto;
+}
+
+/* Table */
+
+.page-checkout .articles {
+	padding: 20px 20px 35px 35px;
+	width: 100%;
+}
+
+.page-checkout .articles .label {
+	padding: 10px 0 10px 20px;
+}
+
+.page-checkout .articles .price {
+	font-weight: bold;
+	text-align: right;
+}
+
+.page-checkout .articles .price span {
+	margin-left: 3px;
+	font-size: 0.9rem;
+}
+
+.page-checkout .articles .total-price p {
+	padding-left: 0;
+	padding-top: 20px;
+}
+
+
+/* Form card */
+
+.page-checkout .pay-form {
+	margin: auto;
+	padding: 25px 0;
+}
+
+.page-checkout .pay-form .row {
+	display: flex;
+	margin: 20px 0;
+	width: 100%;
+}
+
+.page-checkout .pay-form .input {
+	display: flex;
+	flex-direction: column;
+	margin-right: 25px;
+}
+
+
+/* Input style */
+
+.page-checkout .pay-form label {
+	margin-bottom: 10px;
+}
+
+.page-checkout .pay-form input{
+	border: none;
+	border-bottom: 1px solid #616161;
+	padding: 3px;
+}
+
+.page-checkout .pay-form .date input {
+	padding: 0;
+	padding-bottom: 2px;
+}
+
+/* Button */
+.page-checkout .pay-form .card_valid {
+	display: flex;
+}
+
+.page-checkout .pay-form .button {
+	height: 35px;
+	margin: auto;
+	width: auto;
+	padding: 0 15px;
+	border: 1px solid var(--color-teal-black);
+	border-radius: 5px;
+}
+
+.page-checkout .command .button {
+	margin: 25px auto;
+}
+
+.page-checkout .pay-form .button span {
+	font-size: 0.8rem;
+	border: 1px; 
+}
+
+/*
+								CHECKOUT PAGE
+-----------------------------------------------------------------------------------------------------------------------
+*/
 
 
 
