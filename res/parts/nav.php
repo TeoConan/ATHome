@@ -49,10 +49,10 @@
 			<nav class="nav">
 				<ul>
 					<li>
-						<a class="magasin" href="#">Magasin</a>
+						<a class="magasin" href="category.php">Catégories</a>
 					</li>
 					<li>
-						<a class="nouveautes"  href="#">Nouveautés</a>
+						<a class="nouveautes"  href="#">Articles</a>
 					</li>
 					<li>
 						<a class="panier" href="cart.php">Panier</a>
@@ -73,7 +73,5 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="res/vendors/jquery.min.js">
-	</script>
 	<script type="text/javascript" src="script/pop-up.js"></script>
 </header>
