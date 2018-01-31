@@ -50,26 +50,53 @@ require("res/elements/button.php");
 			<!-- Price title and add -->
 			<div class="row">
 				<div class="inner">
-					
+					<div class="card">
+						<div class="inner">
+							<div class="item title">
+								<h2>Table moderne</h2>
+								<h3>Gauthier 45ER82</h3>
+							</div>
+							
+							<div class="item price">
+								<div class="price">
+									<h1>60<span>€</span></h1>	
+								</div>
+							</div>
+							
+							<div class="item add">
+								<?php
+								
+								$add = new Button("Ajouter", '');
+								$add->click = '';
+								echo($add->getOutput());
+								
+								?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			
-			<div class="row">
+			<div class="row comment-descr">
 				<div class="inner">
 				<!-- Tabs comment & descr -->
-					<ul class="tabs">
-						<li class="tab">
-							<div class="inner">
-								<p>Description</p>
-							</div>
-						</li>
-						
-						<li class="tab">
-							<div class="inner">
-								<p>Avis client (2)</p>
-							</div>
-						</li>
-					</ul>
+					<div class="content-tab">
+						<ul class="tabs">
+							<li class="tab">
+								<div class="inner">
+									<p>Description</p>
+								</div>
+							</li>
+
+							<div class="separator"></div>
+
+							<li class="tab">
+								<div class="inner">
+									<p>Avis client (2)</p>
+								</div>
+							</li>
+						</ul>
+					</div>
 					<ul class="list-comment">
 						<li class="comment-item">
 							<div class="comment">

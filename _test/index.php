@@ -3,10 +3,29 @@
     <head>
         <meta charset="utf-8" />
 		<link rel="stylesheet" href="style.css" />
+		<script type="text/javascript" src="../res/vendors/jquery.min.js"></script>
         <title></title>
     </head>
 
     <body>
+    
+    <div class="content">
+    	<div class="rate-stars" id="rate-stars" style="display: flex;">
+    		<img class="star" src="../res/icons/ic_star_border_black_24px.svg"/>
+    		<img class="star" src="../res/icons/ic_star_border_black_24px.svg"/>
+    		<img class="star" src="../res/icons/ic_star_border_black_24px.svg"/>
+    		<img class="star" src="../res/icons/ic_star_border_black_24px.svg"/>
+    		<img class="star" src="../res/icons/ic_star_border_black_24px.svg"/>
+    	</div>
+    </div>
+    
+    <div class="content">
+    	<div style="display: flex;">
+    		<img class="star" src="../res/icons/ic_star_border_black_24px.svg"/>
+    		<img class="star" src="../res/icons/ic_star_black_24px.svg"/>
+    		<img class="star" src="../res/icons/ic_star_half_black_24px.svg"/>
+    	</div>
+    </div>
     
     
     <div class="content">
@@ -84,6 +103,8 @@
 		</div>
 		
 	</div>
+	
+	<script src="script.js"></script>
 		
     </body>
 </html>
