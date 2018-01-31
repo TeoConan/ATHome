@@ -12,6 +12,7 @@ require("res/elements/button.php");
 	<title>ATHome - Catégories</title>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="icon" type="image/png" href="res/icons/logo.ico" />
+	<script type="text/javascript" src="res/vendors/jquery.min.js"></script>
 </head>
 <body class="page-category">
 
@@ -65,6 +66,7 @@ require("res/elements/button.php");
 		</div>
 	</main>
 	<?php include('res/parts/footer.php'); ?>
+	<script type="text/javascript" src="script/script.js"></script>
 </body>
 </html>
 

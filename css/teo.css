@@ -479,7 +479,7 @@
 
 /* Slider */
 .page-product .slider {
-	background-image: url(../res/img/apartment-2094699_1920.jpg);
+	background-image: none;
 	box-shadow: 0px 13px 20px rgba(0,0,0,0.2);
 }
 
@@ -488,6 +488,10 @@
 	width: 100%;
 	background-color: rgba(0,0,0,0.2);
 	height: auto;
+}
+
+.page-product .slider > .overlay > .inner {
+	transition: background-color .75s ease-in;
 }
 
 .page-product .slider .overlay {
@@ -557,11 +561,62 @@
 	margin-left: 50px; 
 }
 
+.page-product .slider .overlay > img.zoom {
+	bottom: 0;
+    top: unset;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    transform: translate(0%, 0%);
+}
+
 /* Profil */
 
 .page-product .profile img {
 	width: 55px;
 }
+
+
+
+/* Popup */
+
+.page-product .slider > .popup {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	display: flex;
+	z-index: 999;
+	opacity: 0;
+	
+	transition: opacity .25s ease-in-out;
+}
+
+.page-product .slider > .popup > .overlay {
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+}
+
+.page-product .slider > .popup > .inner {
+	margin: auto;
+	z-index: 9999;
+	display: flex;
+	width: auto;
+	background-color: rgba(0,0,0,0.00);
+}
+
+.page-product .slider > .popup > .inner > img {
+	max-height: 80vh;
+}
+
+
 
 /*								PRODUCT PAGE
 -----------------------------------------------------------------------------------------------------------------------     */

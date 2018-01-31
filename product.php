@@ -20,6 +20,12 @@ require("res/elements/button.php");
 	<?php include('res/parts/nav.php'); ?>
 	
 	<div class="slider">
+		<div class="popup">
+			<div class="overlay"></div>
+			<div class="inner">
+				<img src="res/img/architecture-2558994_1920.jpg"/>
+			</div>
+		</div>
 		<div class="overlay">
 			<div class="inner">
 				<h2 class="slogan">Table moderne blanche &amp; chaises</h2>
@@ -27,11 +33,13 @@ require("res/elements/button.php");
 			
 			<img class="previous" src="res/icons/ic_keyboard_arrow_left_white_24px.svg"/>
 			<img class="next" src="res/icons/ic_keyboard_arrow_right_white_24px.svg"/>
+			
+			<img class="zoom" src="res/icons/ic_search_white_24px.svg"/>
 
 			<div class="pagination">
 				<div class="dot"></div>
 				<div class="dot"></div>
-				<div class="dot selected"></div>
+				<div class="dot"></div>
 				<div class="dot"></div>
 			</div>
 		</div>	
