@@ -14,6 +14,7 @@ $command = new Button('Commander','#');
 	<title>ATHome - Récapitulatif</title>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="icon" type="image/png" href="res/icons/logo.ico" />
+	<script type="text/javascript" src="res/vendors/jquery.min.js"></script>
 </head>
 <body class="page-checkout">
 	
@@ -63,78 +64,48 @@ $command = new Button('Commander','#');
 				
 				<form class="pay-form">
 				
-				<div class="row">
-					<div class="input owner">
-						<label for="card_owner">Titulaire de la carte :</label>
-						<input type="text" placeholder="Titulaire" name="card_owner" id="card_owner"/>
-					</div>
-					
-					<div class="input number">
-						<label for="card_number">Numéro de la carte :</label>
-						<input type="text" id="card_number" placeholder="Numéro" name="card_number" maxlength="16" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-						</input>
-					</div>
-					
-					<div class="input date">
-						<label for="card_expire">Date d'expiration :</label>
-						<input type="month" id="card_expire" name="card_expire">
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="input cvv">
-						<label for="card_cvv">CVV :</label>
-						<input type="text" placeholder="CVV"  name="card_cvv" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-						</input>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="card_valid">
-						<?php
-
-						$validcard = new Button('Ajouter la carte', '#');
-						echo($validcard->getOutput());
-
-						?>
-					</div>
-				</div>
-				
-				
-					<!--<div class="row">
+					<div class="row">
 						<div class="input owner">
 							<label for="card_owner">Titulaire de la carte :</label>
-							<input type="text" name="card_owner"/>
+							<input type="text" placeholder="Titulaire" name="card_owner" id="card_owner"/>
 						</div>
+
 						<div class="input number">
 							<label for="card_number">Numéro de la carte :</label>
-							<input type="text" name="card_number" maxlength="16" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+							<input type="text" id="card_number" placeholder="Numéro" name="card_number" maxlength="16" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
 							</input>
 						</div>
+
 						<div class="input date">
 							<label for="card_expire">Date d'expiration :</label>
-							<input type="date" min="2018-01-22" name="card_expire">
+							<input type="month" id="card_expire" name="card_expire">
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="input cvv">
-							<label for="card_cvv">Numéro de la carte :</label>
-							<input type="text" name="card_cvv" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+							<label for="card_cvv">CVV :</label>
+							<input type="text" placeholder="CVV" id="card_cvv"  name="card_cvv" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
 							</input>
 						</div>
 						
+						
+					</div>
+
+					<div class="row">
 						<div class="card_valid">
 							<?php
 
-							$validcard = new Button('Vérifier', '#');
+							$validcard = new Button('Ajouter la carte', '');
+							$validcard->setID('add_card');
 							echo($validcard->getOutput());
 
 							?>
 						</div>
-					</div>-->
-					
-					
+						
+						<p class="error" id="card_error">Des champs n'ont pas étés<br>saisi ou sont invalides</p>
+						<p id="card_validate" class="validate">Carte prête pour le paiement</p>
+					</div>	
 				</form>
 				
 				<div class="command">
@@ -145,6 +116,7 @@ $command = new Button('Commander','#');
 		</div>
 	</main>
 
+	<script type="text/javascript" src="script/script.js"></script>
 </body>
 </html>
 

@@ -1,0 +1,47 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+
+section {
+	width: 49vw;
+	height: 49vh;
+	margin: auto;
+	box-sizing: border-box;
+	border: 1px solid black;
+}
+
+section > div {
+	box-sizing: border-box;
+	display: flex;
+	height: 100%;
+}
+
+.follow {
+	width: 40%;
+	height: 60%;
+	padding: 10px;
+	border: 1px solid green;
+	margin: auto;
+}
+
+.error {
+	width: 40%;
+	height: 60%;
+	padding: 10px;
+	border: 1px solid red;
+	margin: auto;
+}
+
+.flex
+
+button {
+	height: 50px;
+	width: 150px;
+}

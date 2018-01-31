@@ -36,7 +36,7 @@ class Button
 		
 		if (isset($this->link) && !empty($this->link)){
 			$this->_attr .= 'href="' . $this->link . '" ';
-		} else {$this->_attr .= 'href="#" ';}
+		}/* else {$this->_attr .= 'href="#" ';}*/
 		
 		if (isset($this->_id) && !empty($this->_id)){
 			$this->_attr .= 'id="' . $this->_id . '" ';

@@ -12,6 +12,8 @@ require("res/elements/button.php");
 	<title>ATHome</title>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="icon" type="image/png" href="res/icons/logo.ico" />
+	<script type="text/javascript" src="res/vendors/jquery.min.js">
+	</script>
 </head>
 <body class="page-home">
 
@@ -285,6 +287,8 @@ require("res/elements/button.php");
 	</main>
 
 	<?php include('res/parts/footer.php'); ?>
+	
+	<script type="text/javascript" src="script/script.js"></script>
 
 </body>
 </html>
