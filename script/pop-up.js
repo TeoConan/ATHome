@@ -20,13 +20,12 @@ function connect(){
 	var mail = document.getElementById('email');
 	var password = document.getElementById('password');
 	var text = document.getElementById('text_connect');
-	if( mail.value==""){
-		text.style.opacity=1;
-	} 
-	else if(password.value==""){
-		text.style.opacity=1;
-	}else {
 	
+	if( mail.value=="" || password.value == ""){
+		text.style.opacity=1;
+	} else {
+		console.log('Connect to account');
+		window.location.href = "http://localhost/athome/account.php";
 	}
 	
 }
