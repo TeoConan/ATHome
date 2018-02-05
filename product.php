@@ -101,14 +101,13 @@ require("res/elements/button.php");
 						<li class="comment-item">
 							<div class="comment">
 								<div class="profile">
-									<img src="res/img/blue-2705642_1920.jpg" class="mini rounded"/>
 								</div>
 								
 								<div class="inner">
 									<div class="head">
 										<h3 class="name">Marie Crack</h3>
 										<p class="date">le 17/05/2018</p>
-										<div class="stars">
+										<div class="stars-avis">
 											<img class="star" src="res/icons/ic_star_black_24px.svg"/>
 											<img class="star" src="res/icons/ic_star_half_black_24px.svg"/>
 											<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
@@ -132,15 +131,18 @@ require("res/elements/button.php");
 					<div class="add-note">
 						<div class="inner">
 							<form>
-								<input id="note" type="text"/>
-								<div class="stars">
-									<img class="star" src="res/icons/ic_star_black_24px.svg"/>
-									<img class="star" src="res/icons/ic_star_half_black_24px.svg"/>
-									<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
-									<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
-									<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
+								<legend>AJOUTER UN AVIS</legend>
+								<div class="avis">
+									<textarea id="note" type="text" onclick="note.value='';" >Votre commentaire...</textarea>
+									<div class="stars">
+										<p class="note_name"> Note :</p>
+										<img class="star" src="res/icons/ic_star_black_24px.svg"/>
+										<img class="star" src="res/icons/ic_star_half_black_24px.svg"/>
+										<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
+										<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
+										<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
+									</div>
 								</div>
-								
 								<?php
 
 								$addnote = new Button('Ajouter', '');
@@ -151,7 +153,7 @@ require("res/elements/button.php");
 							</form>
 						</div>
 					</div>
-					
+					<!-- 
 					<div class="services">
 						<div class="inner">
 							<h3>services disponibles</h3>
@@ -180,18 +182,21 @@ require("res/elements/button.php");
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> 
+						-->
 					</div>
 				</div>
 			</div>
 			
-			<div class="row">
+			<div class="row_suggestions">
 				<div class="inner">
 					<div class="suggestions">
-						<h3>produits similaires</h3>
-						
-						<ul>
-							<li>
+						<div class="titre">
+							<h3 class="titre_suggestions">PRODUITS SIMILAIRES</h3>
+						</div>
+						<div class="produits-similaires">
+						<ul class="liste-produits">
+							<li class="produit">
 								<?php
 								$sugg1 = new Box('', "res/img/canapé-lit-mural.jpg");
 								$sugg1->link = "/product.php?style=asiatique";
@@ -202,7 +207,42 @@ require("res/elements/button.php");
 								<p class="title">Canapé lit mural</p>
 								<p class="price">175 €</p>
 							</li>
+							<li class="produit">
+								<?php
+								$sugg1 = new Box('', "res/img/chaise gain de place.jpg");
+								$sugg1->link = "/product.php?type=chaise";
+
+								echo($sugg1->getOutput());
+								?>
+								
+								<p class="title">Chaises empilables</p>
+								<p class="price">25 €</p>
+							</li>
+							<li class="produit">
+								<?php
+								$sugg1 = new Box('', "res/img/table-basse-chaises.jpg");
+								$sugg1->link = "/product.php?type=table";
+
+								echo($sugg1->getOutput());
+								?>
+								
+								<p class="title">Table avec chaises emboitables</p>
+								<p class="price">175 €</p>
+							</li>
+							<li class="produit">
+								<?php
+								$sugg1 = new Box('', "res/img/table-placard.jpg");
+								$sugg1->link = "/product.php?type=table";
+
+								echo($sugg1->getOutput());
+								?>
+								
+								<p class="title">Table murale rangeable</p>
+								<p class="price">35 €</p>
+							</li>
 						</ul>
+						</div>
+						
 					</div>
 				</div>
 			</div>
