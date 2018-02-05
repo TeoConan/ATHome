@@ -265,6 +265,71 @@
 
 
 
+/*								
+-----------------------------------------------------------------------------------------------------------------------     
+								CONNEXION PAGE*/
+
+/* Correction */
+.block-header .body_pop-up {
+	width: auto !important;
+	padding: 25px 40px !important;
+}
+
+
+/* Inscription */
+
+/* Test */
+form.connexion {
+	display: none !important;
+	
+}
+
+.pop-up .formulaire {
+	
+}
+
+.pop-up .formulaire .registration .button {
+	margin: 20px auto 0px;
+}
+
+.pop-up .registration {
+	margin-top: 20px;
+	min-width: 300px;
+}
+
+.pop-up .registration > div {
+	border-bottom: 1px solid grey;
+	
+}
+
+.pop-up .registration > div > p{
+	margin: 0 auto;
+	
+}
+
+.pop-up .registration input {
+	text-align: center;
+	width: 100% !important;
+	padding: 10px 0;
+}
+
+.pop-up .registration p.error {
+	text-align: center;
+    color: #E53935;
+    font-family: Calibri, 'sans-serif';
+    margin-top: 5px;
+	display: none;
+}
+
+.pop-up .registration .reg-file {
+	border: none;
+	display: flex;
+}
+
+/*								CONNEXION PAGE
+-----------------------------------------------------------------------------------------------------------------------*/
+
+
 
 /*								INDEX PAGE
 -----------------------------------------------------------------------------------------------------------------------*/

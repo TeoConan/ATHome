@@ -9,7 +9,7 @@
 		<div class="inner">
 			<img src="res/icons/logo_black.svg" class="logo" alt="logo">
 			<div class="formulaire">
-				<form action="connexion.php" method="post">
+				<form action="connexion.php" method="post" class="connexion">
 				<div class="mail">
 					<p>
 						<label for="email">User :</label>
@@ -30,6 +30,44 @@
 					?>
 				</form>	
 				<a href="#" class="inscription">Inscription</a>
+				
+				<form class=registration>
+					
+					<div class="reg-mail">
+						<p>
+							<input type="email" name="reg-email" class="form" id="reg-email" placeholder="e-mail de connection" maxlength="40">
+						</p>
+					</div>
+					<p class="error">Erreur de syntaxe</p>
+					
+					
+					<div class="reg-name">
+						<p>
+							<input type="text" name="reg-name" class="form" id="reg-name" placeholder="Nom & Prénom" maxlength="40">
+						</p>
+					</div>
+					<p class="error">Erreur de syntaxe</p>
+					
+					<div class="reg-password">
+						<p>
+							<input type="password" name="reg-password" class="form" id="reg-password" placeholder="Votre mot de passe" maxlength="40">
+						</p>
+					</div>
+					<p class="error">Erreur de syntaxe</p>
+					
+					<div class="reg-password confirm">
+						<p>
+							<input type="password" name="reg-password" class="form" id="reg-password" placeholder="Confirmer votre mot de passe" maxlength="40">
+						</p>
+					</div>
+					<p class="error">Erreur de syntaxe</p>
+					
+					<?php
+					$but_reg = new Button('Inscrition', 'javascript:register()');
+					$but_reg->setID('button_resgistration');
+					echo($but_reg->getOutput());
+					?>
+				</form>
 			</div>
 		</div>
 	</div>
