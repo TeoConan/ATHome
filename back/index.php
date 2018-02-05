@@ -1,6 +1,6 @@
 <?php
 
-require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 
 ?>
 
@@ -30,6 +30,14 @@ require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 					<?php 
 				
 					PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
+				
+					
+					
+					
+					
+					
+					/* userModel::newUser($user); */
+					
 					/*PDOModel::insertSQL('user', '`id`, `img_present`, `img_banner`, `date_registration`, `adresse`, `user_name`, `user_firstname`, `user_mail`, `user_password`, `delivery_history_id`, `id_cart`', "NULL, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL");
 					
 					PDOModel::exeSQL("INSERT INTO `user` (`id`, `img_present`, `img_banner`, `date_registration`, `adresse`, `user_name`, `user_firstname`, `user_mail`, `user_password`, `delivery_history_id`, `id_cart`) VALUES (NULL, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL);");

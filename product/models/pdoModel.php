@@ -86,6 +86,7 @@ class PDOModel
 	
 	//Executer une requete SQL
 	public static function exeSQL($query){
+		echo $query;
 		return (self::$link->query($query));
 	}
 	
