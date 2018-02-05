@@ -29,6 +29,7 @@ section > div {
 	padding: 10px;
 	border: 1px solid green;
 	margin: auto;
+	overflow: scroll;
 }
 
 .error {
