@@ -17,5 +17,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/res/elements/button.php");
 
 /* Models */
 require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/product/models/pdoModel.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/product/models/pieceModel.php");
+
+/* Objects */
+require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/product/objects/piece.php");
 
 ?>

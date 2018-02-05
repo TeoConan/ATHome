@@ -64,10 +64,10 @@ class PDOModel
 			$select = "`" . $select . "`";
 		}
 		
-		$query = 'SELECT ' . $select . ' FROM ' . $table . ' ';
+		$query = 'SELECT ' . $select . ' FROM `' . $table . '` ';
 		
 		if($where != false) {
-			$query .= $where;
+			$query .= ' WHERE ' . $where;
 		}
 		echo('<br>Query : ' . $query . ' <br>');
 		$output = self::returnSQL($query);
@@ -86,6 +86,7 @@ class PDOModel
 	
 	//Executer une requete SQL
 	public static function exeSQL($query){
+		echo('Query = ' . $query);
 		return (self::$link->query($query));
 	}
 	
