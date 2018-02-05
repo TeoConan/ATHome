@@ -1,7 +1,6 @@
 <?php
 
-require("../res/elements/box.php");
-require("../res/elements/button.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 
 ?>
 
@@ -9,7 +8,7 @@ require("../res/elements/button.php");
 <html>
 <head>
 <meta charset="utf-8">
-	<title>ATHome</title>
+	<title>BACK-END / ATHome</title>
 	<link rel="stylesheet" href="back.css"/>
 	<link rel="icon" type="image/png" href="../res/icons/logo.ico" />
 </head>
@@ -27,6 +26,19 @@ require("../res/elements/button.php");
 			<div class="content">
 				<div class="follow">
 					<p>Suivi</p>
+					
+					<?php 
+				
+					PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
+					/*PDOModel::insertSQL('user', '`id`, `img_present`, `img_banner`, `date_registration`, `adresse`, `user_name`, `user_firstname`, `user_mail`, `user_password`, `delivery_history_id`, `id_cart`', "NULL, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL");
+					
+					PDOModel::exeSQL("INSERT INTO `user` (`id`, `img_present`, `img_banner`, `date_registration`, `adresse`, `user_name`, `user_firstname`, `user_mail`, `user_password`, `delivery_history_id`, `id_cart`) VALUES (NULL, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL);");
+					
+					PDOModel::updateSQL('user', '4', "`img_present` = 'Bonsoireu', `img_banner` = 'Hello', `adresse` = 'cucu'");
+					
+					$get = PDOModel::getAllSQL("user", "*");
+					echo("L'adresse de l'objet 0 : " . $get[0]->adresse);*/
+					?>
 				</div>
 				
 				<div class="error">
