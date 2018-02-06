@@ -53,7 +53,10 @@ PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 						foreach($styles as $element){
 							$out = new Box($element->label, "product/res/style/" . $element->img_present);
 							$out->link = "product.php?style=" . ($element->label);
-							$out->setBackground($element->color_overlay);
+							
+							if(!empty($element->color_overlay)){
+								$out->setBackground($element->color_overlay);
+							}
 							
 							echo('<li class="item-style">');
 							echo($out->getOutput());
@@ -68,6 +71,29 @@ PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 			<div class="row">
 				<div class="inner">
 					<ul class="list-styles">
+					
+						<?php
+						
+						/* Styles */
+
+						$styles = styleModel::getAllStyles();
+						
+						foreach($styles as $element){
+							$out = new Box($element->label, "product/res/style/" . $element->img_present);
+							$out->link = "product.php?style=" . ($element->label);
+							
+							if(!empty($element->color_overlay)){
+								$out->setBackground($element->color_overlay);
+							}
+							
+							echo('<li class="item-style">');
+							echo($out->getOutput());
+							echo('</li>');
+						}
+						
+						?>
+					
+					
 						<li class="item-style">
 							<?php
 							$table = new Box('Table', "res/img/type_table.jpg");
