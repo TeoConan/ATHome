@@ -90,6 +90,16 @@ class PDOModel
 		return (self::$link->query($query));
 	}
 	
+	public static function deleteSQL($table, $where){
+		
+		if ($where == ""){
+			//Error
+		} else {
+			$query = "DELETE FROM `" . $table . "` WHERE " . $where . ";";
+			self::exeSQL($query);
+		}
+	}
+	
 	//Mettre à jour la BDD
 	public static function updateSQL($table, $id, $cln){
 		$query = "UPDATE `" . $table . "` SET " . $cln . " WHERE `" . $table . "`.`id` = " . $id . ";";

@@ -113,6 +113,10 @@ class pieceModel
 		var_dump($output);
 	}
 	
+	public static function deletePiece($id){
+		PDOModel::deleteSQL('piece', '`id` = ' . $id);
+	}
+	
 	public static function updatePiece($piece){
 		
 		PDOModel::updateSQL('piece', $piece->id, 
@@ -130,13 +134,7 @@ class pieceModel
 						   );
 		
 	}
-	
-	
-	//Delete
-	public static function insertSQL($table, $cln, $value) {
-			$query = 'INSERT INTO `' . $table . '` (' . $cln . ') VALUE (' . $value . ')';
-			return (self::exeSQL($query));
-	}
+
 }
 
 ?>
