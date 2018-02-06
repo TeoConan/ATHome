@@ -30,11 +30,9 @@ require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 					<?php 
 				
 					PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
-				
 					
 					
-					
-					
+					PDOModel::updateSQL('user', '9', "`img_present` = 'Bonsoireu', `img_banner` = 'Hello', `adresse` = 'cucu'");
 					
 					/* userModel::newUser($user); */
 					

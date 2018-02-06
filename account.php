@@ -1,8 +1,26 @@
 <?php
+require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
+//require_once("/product/objects/user.php");
+//Faux current user
 
-require("res/elements/box.php");
-require("res/elements/button.php");
+PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 
+//userModel::connectUser("mariecrach@gmail.fr","coucou1bebe");
+
+$current = $_SESSION['user'];
+
+//Check
+$error = false;
+if(
+	empty($current->user_mail) ||
+	empty($current->user_firstname) ||
+	empty($current->user_name)
+) {
+	$error = true;
+	header('Location: error.php');
+} else {
+	
+}
 ?>
 
 <!doctype html>
@@ -19,8 +37,8 @@ require("res/elements/button.php");
 	<?php include('res/parts/nav.php'); ?>
 
 	<div class="profile">
-		<div class="preview"></div>
-		<div class="customer">
+		<div class="preview" style="background-image: url(product/res/user/banner/<?php echo($current->img_banner); ?>);"></div>
+		<div class="customer" style="background-image: url(product/res/user/profil/<?php echo($current->img_present); ?>);">
 		</div>
 	</div>
 
@@ -28,17 +46,24 @@ require("res/elements/button.php");
 		<div class="inner">
 			<div class="row">
 				<div class="box-info">
-					<h1>Marie</h1>
-					<h2>Crach</h2>
+					<h1><?php echo(ucfirst($current->user_firstname)); ?></h1>
+					<h2><?php echo(ucfirst($current->user_name)); ?></h2>
 					<div class="separator"></div>
 					<div class="inscription">
 						<img src="res/icons/ic_account_circle_green_24px.svg"/>
-						<p>Inscrite depuis le 12 septembre</p>
+						<p>Inscrite depuis le <?php echo($current->date_registration); ?></p>
 					</div>
 					
 					<div class="livraison">
 						<img src="res/icons/ic_pin_drop_green_24px.svg"/>
-						<p>1 moyen de livraison</p>
+						<?php
+							if (!empty($current->adresse)){
+								echo('<p>1 adresse de livraison</p>');
+							} else {
+								echo('<p>aucune adresse de livraison</p>');
+							}
+						?>
+						
 					</div>
 					
 					<div class="cart">
@@ -101,41 +126,3 @@ require("res/elements/button.php");
 	<script type="text/javascript" src="script/script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
