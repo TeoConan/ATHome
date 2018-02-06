@@ -278,11 +278,102 @@
 
 /* Inscription */
 
-/* Test */
-form.connexion {
-	display: none !important;
+.page-register {
+	display: flex;
+	background-color: #212121;
+}
+
+.main-register {
+	margin: auto;
+	background: #212121;
+	z-index: 2;
+	min-width: 350px;
+	transform: translate(50%, -50%);
+	top: 50%;
+	right: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: fixed;
+	border-radius: 7px;
+}
+
+.main-register > .inner {
+	padding: 20px;
+}
+
+.main-register .logo {
+	display: flex;
+	height: 125px;
+}
+
+.main-register .logo > img {
+	max-width: 75px;
+	max-height: 75px;
+	margin: auto;
+}
+
+.main-register p.error {
+	text-align: center;
+    color: #E53935;
+    font-family: Calibri, 'sans-serif';
+    margin-top: 15px;
+	display: none;
+}
+
+.page-register .overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 110vh;
+	width: 110vw;
+	background-image: url(../res/img/japan-2014618_1920.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 1;
+	filter: blur(5px);
+}
+
+/* Input */
+
+.main-register .registration > div {
+	border-bottom: 1px solid grey;
+	box-sizing: border-box;
+	margin: 20px 0;
+}
+
+
+.main-register .registration > div > p {
 	
 }
+
+.main-register .registration input {
+	background-color: transparent;
+	border: none;
+	color: white;
+	box-sizing: border-box;
+	min-width: 200px;
+	font-size: 1rem;
+	padding: 4px 8px 4px;
+}
+
+.main-register .registration input:focus {
+	border: none;
+	outline: none;
+	border-bottom: 2px solid white;
+}
+
+.main-register .registration .button {
+	margin: 30px auto 15px;
+	border: 1px solid var(--color-teal-black);
+	height: 45px;
+	width: 130px;
+}
+
+
+
+
 
 .pop-up .formulaire {
 	
