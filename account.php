@@ -1,8 +1,43 @@
 <?php
 
-require("res/elements/box.php");
-require("res/elements/button.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 
+
+
+//require_once("/product/objects/user.php");
+//Faux current user
+//$current = $_SESSION['user'];
+
+$user = new User();
+$user->id = 1;
+$user->img_present = "blue-2705642_1920.jpg";
+$user->img_banner = "make-up-2137800.jpg";
+$user->date_registration = "2018-02-05";
+$user->adresse = "10 rue salutations";
+$user->user_name = "conan";
+$user->user_firstname ="marie";
+$user->user_mail ="mariecrach@gmail.fr";
+$user->cart = "null";
+$user->setPassword("coucou1bébé");
+
+$_SESSION['user'] = $user;
+
+$current = $_SESSION['user'];
+
+//Check
+
+$error = false;
+
+if(
+	empty($current->user_mail) ||
+	empty($current->user_firstname) ||
+	empty($current->user_name)
+) {
+	$error = true;
+	header('Location: error.php');
+} else {
+	
+}
 ?>
 
 <!doctype html>
@@ -19,8 +54,8 @@ require("res/elements/button.php");
 	<?php include('res/parts/nav.php'); ?>
 
 	<div class="profile">
-		<div class="preview"></div>
-		<div class="customer">
+		<div class="preview" style="background-image: url(product/res/user/banner/<?php echo($current->img_banner); ?>);"></div>
+		<div class="customer" style="background-image: url(product/res/user/profil/<?php echo($current->img_present); ?>);">
 		</div>
 	</div>
 
@@ -28,17 +63,24 @@ require("res/elements/button.php");
 		<div class="inner">
 			<div class="row">
 				<div class="box-info">
-					<h1>Marie</h1>
-					<h2>Crach</h2>
+					<h1><?php echo(ucfirst($current->user_firstname)); ?></h1>
+					<h2><?php echo(ucfirst($current->user_name)); ?></h2>
 					<div class="separator"></div>
 					<div class="inscription">
 						<img src="res/icons/ic_account_circle_green_24px.svg"/>
-						<p>Inscrite depuis le 12 septembre</p>
+						<p>Inscrite depuis le <?php echo($current->date_registration); ?></p>
 					</div>
 					
 					<div class="livraison">
 						<img src="res/icons/ic_pin_drop_green_24px.svg"/>
-						<p>1 moyen de livraison</p>
+						<?php
+							if (!empty($current->adresse)){
+								echo('<p>1 adresse de livraison</p>');
+							} else {
+								echo('<p>aucune adresse de livraison</p>');
+							}
+						?>
+						
 					</div>
 					
 					<div class="cart">

@@ -3,7 +3,7 @@
 require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 
 
-require_once("../product/objects/piece.php");
+//require_once("../product/objects/piece.php");
 ?>
 
 <!doctype html>
@@ -70,12 +70,18 @@ require_once("../product/objects/piece.php");
 					
 					//pieceModel::newPiece($piece);				
 					//var_dump($piece);
-					//echo(pieceModel::getPiece("17"));
+					//var_dump(pieceModel::getPiece(17));
 					
-					pieceModel::updatePiece($piece);
+					//pieceModel::updatePiece($piece);
 					
 					
-					//	print_r(pieceModel::getAllPieces());
+					print_r(styleModel::getAllStyles());
+					
+					//Get
+					
+					//echo(pieceModel::deletePiece(18));
+					
+					//echo(PDOModel::deleteSQL('user', '`id` = 7'));
 					
 					
 					

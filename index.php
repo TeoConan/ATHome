@@ -3,6 +3,8 @@
 
 require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 
+
+PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 ?>
 
 <!doctype html>
@@ -41,81 +43,24 @@ require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 			<div class="row">
 				<div class="inner">
 					<ul class="list-styles">
-						<li class="item-style">
-							<?php
-							$asiat = new Box('Asiatique', "res/img/style_asiatique.jpg");
-							$asiat->link = "/product.php?style=asiatique";
-							$asiat->setBackground(107, 11, 12);
-
-							echo($asiat->getOutput());
-							?>
-						</li>
+					
+						<?php
 						
-						<li class="item-style">
-							<?php
-							$wood = new Box('Bois', "res/img/style_bois.jpg");
-							$wood->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(83, 71, 65, 0.33)";
-							$wood->setBackground(83, 71, 65);
+						/* Styles */
 
-							echo($wood->getOutput());
-							?>
-						</li>
+						$styles = styleModel::getAllStyles();
 						
-						<li class="item-style">
-							<?php
-							$classic = new Box('Classique chic', "res/img/style_classic_chic.jpg");
-							$classic->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(199, 178, 153, 0.33)";
-							$classic->setBackground(199, 178, 153);
-
-							echo($classic->getOutput());
-							?>
-						</li>
+						foreach($styles as $element){
+							$out = new Box($element->label, "product/res/style/" . $element->img_present);
+							$out->link = "product.php?style=" . ($element->label);
+							$out->setBackground($element->color_overlay);
+							
+							echo('<li class="item-style">');
+							echo($out->getOutput());
+							echo('</li>');
+						}
 						
-						<li class="item-style">
-							<?php
-							$colored = new Box('Coloré', "res/img/style_coloré.jpg");
-							$colored->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(62, 39, 35, 0.33)";
-							$colored->setBackground(62,39,35);
-
-							echo($colored->getOutput());
-							?>
-						</li>
-						
-						<li class="item-style">
-							<?php
-							$indus = new Box('Industriel', "res/img/style_industriel.jpg");
-							$indus->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(173, 20, 87, 0.33)";
-							$indus->setBackground(173, 20, 87);
-
-							echo($indus->getOutput());
-							?>
-						</li>
-						
-						<li class="item-style">
-							<?php
-							$mordern = new Box('Moderne', "res/img/style_moderne.jpg");
-							$mordern->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(35, 35, 34, 0.33)";
-							$mordern->setBackground(35, 35, 34);
-
-							echo($mordern->getOutput());
-							?>
-						</li>
-						
-						<li class="item-style">
-							<?php
-							$vintage = new Box('Vintage', "res/img/style_vintage.jpg");
-							$vintage->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(38, 166, 154, 0.33)";
-							$vintage->setBackground(38, 166, 154);
-
-							echo($vintage->getOutput());
-							?>
-						</li>
+						?>
 					</ul>
 				</div>
 			</div>

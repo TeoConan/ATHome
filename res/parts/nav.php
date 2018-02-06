@@ -9,7 +9,7 @@
 		<div class="inner">
 			<img src="res/icons/logo_black.svg" class="logo" alt="logo">
 			<div class="formulaire">
-				<form action="connexion.php" method="post" class="connexion">
+				<form action="connexion.php" method="post" class="connexion" style="display: flex !important;">
 				<div class="mail">
 					<p>
 						<label for="email">User :</label>
@@ -31,7 +31,7 @@
 				</form>	
 				<a href="#" class="inscription">Inscription</a>
 				
-				<form class=registration>
+				<!-- <form class=registration>
 					
 					<div class="reg-mail">
 						<p>
@@ -67,7 +67,7 @@
 					$but_reg->setID('button_resgistration');
 					echo($but_reg->getOutput());
 					?>
-				</form>
+				</form>  -->
 			</div>
 		</div>
 	</div>

@@ -2,12 +2,12 @@
 
 //include_once("../objects/piece.php");
 
-class pieceModel
+class cartModel
 {
 	public static $var = 'test de class static';
 	
 	
-	public static function newPiece($piece){
+	public static function newCart($cart){
 		
 		PDOModel::insertSQL('piece',
 							"`prix`, 
@@ -38,22 +38,9 @@ class pieceModel
 							);");
 	}
 	
-	
-	//Recuperer tous les meubles
-	public static function getAllPieces($where = false){
-		$all = PDOModel::getAllSQL('piece', '*', $where);
-		$output = array();
-
-		foreach($all as $element){
-			array_push($output, self::convertObjToPiece($element));
-		}
-		
-		return($output);
-	}
-	
-	//Convertir un objet strClass en Piece
+	//Convertir un objet strClass en Cart
 	private function convertObjToPiece($obj){
-		$output = new Piece();
+		$output = new Cart();
 		
 		if(!empty($obj->id)){
 			$output->id = $obj->id;
@@ -108,9 +95,9 @@ class pieceModel
 	}
 	
 	//Recupere un meuble grace a son id et retourne un objet
-	public static function getPiece($id){
+	public static function getCart($id){
 		$output = PDOModel::getSQL("piece", "*", "`id` = " . $id);
-		return(self::convertObjToPiece($output));
+		var_dump($output);
 	}
 	
 	public static function deletePiece($id){

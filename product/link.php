@@ -18,8 +18,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/res/elements/button.php");
 /* Models */
 require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/product/models/pdoModel.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/product/models/pieceModel.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/product/models/styleModel.php");
 
 /* Objects */
 require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/product/objects/piece.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/product/objects/user.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/athome/product/objects/style.php");
 
 ?>

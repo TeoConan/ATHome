@@ -152,8 +152,8 @@ class Box
 	public function setID($id){$this->_id = $id;}
 	
 	//Couleur et opacité du background
-	public function setBackground($r, $v, $b){
-		$this->bg_color = 'rgba(' . $r . ', ' . $v . ', ' . $b . ', 0.5)';
+	public function setBackground($rvb){
+		$this->bg_color = 'rgba(' . $rvb . ', 0.5)';
 	}
 	
 	/* Doc */
