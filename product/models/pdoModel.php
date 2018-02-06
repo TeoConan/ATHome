@@ -67,9 +67,9 @@ class PDOModel
 		$query = 'SELECT ' . $select . ' FROM ' . $table . ' ';
 		
 		if($where != false) {
-			$query .= $where;
+			$query .= ' WHERE ' . $where;
 		}
-		echo('<br>Query : ' . $query . ' <br>');
+ 		echo('<br>pdoModel : Query : ' . $query . ' <br>');
 		$output = self::returnSQL($query);
 		return($output->fetch());
 	}
