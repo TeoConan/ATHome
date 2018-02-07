@@ -26,13 +26,26 @@ require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 			<div class="content">
 				<div class="follow">
 					<p>Suivi</p>
-					
 					<?php 
 				
 					PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 					
 					
-					PDOModel::updateSQL('user', '9', "`img_present` = 'Bonsoireu', `img_banner` = 'Hello', `adresse` = 'cucu'");
+					
+						$user = new User();
+	
+						$user->id = "NULL";
+						$user->img_present = "../res/img/default.jpg";
+						$user->img_banner = "../res/img/architecture-3121009.jpg" ;
+						$user->date_registration = "2018-02-07";
+						$user->adresse = "10 route de chemellier";
+						$user->user_name = "Pouivet";
+						$user->user_firstname ="alexandre";
+						$user->user_mail ="alexpouivet@hotmail.fr";
+						$user->cart = "null";
+						$user->setPassword("123456abcdef");
+					
+					userModel::newUser($user);
 					
 					/* userModel::newUser($user); */
 					
@@ -46,7 +59,6 @@ require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 					echo("L'adresse de l'objet 0 : " . $get[0]->adresse);*/
 					?>
 				</div>
-				
 				<div class="error">
 					<p>Erreurs</p>
 				</div>

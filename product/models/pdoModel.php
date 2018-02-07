@@ -69,7 +69,7 @@ class PDOModel
 		if($where != false) {
 			$query .= ' WHERE ' . $where;
 		}
- 		echo('<br>pdoModel : Query : ' . $query . ' <br>');
+ 		//echo('<br>pdoModel : Query : ' . $query . ' <br>');
 		$output = self::returnSQL($query);
 		return($output->fetch());
 	}
@@ -86,7 +86,7 @@ class PDOModel
 	
 	//Executer une requete SQL
 	public static function exeSQL($query){
-		echo $query;
+		//echo $query;
 		return (self::$link->query($query));
 	}
 	

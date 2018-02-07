@@ -25,7 +25,27 @@ function connect(){
 		text.style.opacity=1;
 	} else {
 		console.log('Connect to account');
-		window.location.href = "http://localhost/athome/account.php";
+		// window.location.href = "http://localhost/projet/athome/account.php";
+		sendQuery('connexion.php?email='+ mail.value + '&password='+ password.value);
 	}
 	
+}
+
+
+
+function sendQuery(query){
+    console.log('Function sendQuery');
+    console.log("query : " + query);
+    
+    //instance de l'objet
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange=function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("ShowMessage response = ");
+            console.log(this.responseText);
+        }
+    };
+    
+    xhttp.open("GET",query , true);
+    xhttp.send();
 }

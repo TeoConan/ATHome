@@ -5,7 +5,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 
 PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 
-//userModel::connectUser("mariecrach@gmail.fr","coucou1bebe");
+userModel::connectUser("mariecrach@gmail.fr","coucou1bebe");
 
 $current = $_SESSION['user'];
 
