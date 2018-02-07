@@ -100,7 +100,7 @@ class userModel {
 	}
 	
 	public function connectUser($mail,$password){
-		echo "connect user";
+		//echo "connect user";
 		
 		$get = PDOModel::getSQL("user", "*", "`user_mail` = '". $mail . "' AND `user_password` = '". $password ."'");
 		
@@ -113,9 +113,8 @@ class userModel {
 			}
 			
 			$_SESSION['user']= serialize($output);
+			//header('Location: account.php');
 			//echo('SESSION COMMITED : ' . var_dump($_SESSION['user']));
-			//header("Refresh:0; url=/athome/");
-			header("Refresh:0; url=/projet/athome/");
 		}
 	}		
 

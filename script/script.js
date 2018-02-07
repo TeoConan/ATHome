@@ -6,7 +6,7 @@ console.log('Script script/script.js');
 
 // Onglets
 
-function change_onglet(name)
+/*function change_onglet(name)
                 {
                         document.getElementById('onglet_'+anc_onglet).className = 'onglet_0 onglet';
                         document.getElementById('onglet_'+name).className = 'onglet_1 onglet';
@@ -16,7 +16,58 @@ function change_onglet(name)
                 }
 
 var anc_onglet = 'quoi';
-change_onglet(anc_onglet);
+change_onglet(anc_onglet);*/
+
+// Inscription
+
+function register(){
+	var reg_email = document.getElementById('reg-email').value ; 
+	var reg_name = document.getElementById('reg-name').value;
+	var reg_password= document.getElementById('reg-password').value;
+	var reg_password_conf= document.getElementById('reg-password-conf').value;
+	
+	if(reg_email != null &&
+	   reg_name != null && 
+	   (reg_password != null && reg_password_conf != null && reg_password == reg_password_conf)){
+		console.log ("Envoi de la requête");
+		
+		var query = ('inscription.php?regemail=' + reg_email + '&regname=' + reg_name + '&regpassword=' + reg_password + '&regpasswordconf=' + reg_password_conf);
+		
+		//instance de l'objet
+		xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange=function() {
+			if (this.readyState == 4 && this.status == 200) {
+				
+				if (this.responseText == "connected"){
+					window.location.replace("account.php");
+				}
+				console.log("ShowMessage response = ");
+				console.log(this.responseText);
+			}
+		};
+
+		xhttp.open("GET",query , true);
+		xhttp.send();
+		
+	}
+}
+
+function sendQuery(query){
+    console.log('Function sendQuery');
+    console.log("query : " + query);
+    
+    //instance de l'objet
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange=function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("ShowMessage response = ");
+            console.log(this.responseText);
+        }
+    };
+    
+    xhttp.open("GET",query , true);
+    xhttp.send();
+}
 
 
 /* Teo */
