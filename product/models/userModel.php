@@ -100,6 +100,8 @@ class userModel {
 	}
 	
 	public function connectUser($mail,$password){
+		echo "connect user";
+		
 		$get = PDOModel::getSQL("user", "*", "`user_mail` = '". $mail . "' AND `user_password` = '". $password ."'");
 		
 		if(empty($get)){
@@ -107,7 +109,7 @@ class userModel {
 		}else {
 			$output = self::convertObjToUser($get);
 			$_SESSION['user']= $output;
-			//header("Refresh:0; url=/projet/athome/");
+			header("Refresh:0; url=/projet/athome/");
 		}
 	}		
 

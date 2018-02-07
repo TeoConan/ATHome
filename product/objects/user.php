@@ -12,6 +12,7 @@ class User {
 	public $user_mail;			// Mail de l'utilisateur
 	public $cart;				// Panier associé à l'utilisateur
 	public $user_password;		// Mot de passe de l'utilisateur
+
 		
 	
 	// retourne le mot de passe 
@@ -39,4 +40,5 @@ class User {
 	
 	*/
 }
+
 ?>
