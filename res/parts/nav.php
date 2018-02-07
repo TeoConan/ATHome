@@ -29,7 +29,7 @@
 					echo($but_connect->getOutput());
 					?>
 				</form>	
-				<a href="#" class="inscription">Inscription</a>
+				<a href="register.php" class="inscription">Inscription</a>
 				
 				<!-- <form class=registration>
 					
