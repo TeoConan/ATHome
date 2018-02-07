@@ -9,8 +9,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 <meta charset="utf-8">
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="icon" type="image/png" href="res/icons/logo.ico" />
-	<script type="text/javascript" src="res/vendors/jquery.min.js">
-	</script>
+	<script type="text/javascript" src="res/vendors/jquery.min.js"></script>
 	<title>ATHome - Inscription</title>
 </head>
 
@@ -65,8 +64,6 @@ require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 				</form>
 		</div>
 	</main>
-	
-<script src="script/script.js"></script>	
-	
+	<script type="text/javascript" src="script/script.js"></script>
 </body>
 </html>

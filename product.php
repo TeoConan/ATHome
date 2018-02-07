@@ -1,7 +1,24 @@
 <?php
 
-require("res/elements/box.php");
-require("res/elements/button.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
+
+$idpiece = $_GET['id'];
+
+$error = false;
+
+if (!isset($_GET['id'])){
+	$error = true;
+	header('Location: error.php');
+}
+
+$current = pieceModel::getPiece($idpiece);
+
+//var_dump($current);
+
+if(!isset($current->price)){
+	$error = true;
+	header('Location: error.php');
+}
 
 ?>
 
@@ -28,7 +45,7 @@ require("res/elements/button.php");
 		</div>
 		<div class="overlay">
 			<div class="inner">
-				<h2 class="slogan">Table moderne blanche &amp; chaises</h2>
+				<h2 class="slogan"></h2>
 			</div>
 			
 			<img class="previous" src="res/icons/ic_keyboard_arrow_left_white_24px.svg"/>
@@ -53,13 +70,13 @@ require("res/elements/button.php");
 					<div class="card">
 						<div class="inner">
 							<div class="item title">
-								<h2>Table moderne</h2>
-								<h3>Gauthier 45ER82</h3>
+								<h2><?php echo($current->label); ?></h2>
+								<h3><?php echo($current->brand .  " " . $current->ref); ?></h3>
 							</div>
 							
 							<div class="item price">
 								<div class="price">
-									<h1>60<span>€</span></h1>	
+									<h1><?php echo($current->price); ?><span>€</span></h1>	
 								</div>
 							</div>
 							
@@ -77,7 +94,7 @@ require("res/elements/button.php");
 				</div>
 			</div>
 			
-			<div class="row comment-descr">
+			<div class="row comment-descr" style="display: none;">
 				<div class="inner">
 				<!-- Tabs comment & descr -->
 					<div class="systeme_onglets">
@@ -136,9 +153,9 @@ require("res/elements/button.php");
 										<p class="date">le 17/05/2018</p>
 										<div class="stars-avis">
 											<img class="star" src="res/icons/ic_star_black_24px.svg"/>
+											<img class="star" src="res/icons/ic_star_black_24px.svg"/>
+											<img class="star" src="res/icons/ic_star_black_24px.svg"/>
 											<img class="star" src="res/icons/ic_star_half_black_24px.svg"/>
-											<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
-											<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
 											<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
 										</div>
 									</div>
@@ -164,10 +181,10 @@ require("res/elements/button.php");
 									<div class="stars">
 										<p class="note_name"> Note :</p>
 										<img class="star" src="res/icons/ic_star_black_24px.svg"/>
-										<img class="star" src="res/icons/ic_star_half_black_24px.svg"/>
-										<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
-										<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
-										<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
+											<img class="star" src="res/icons/ic_star_black_24px.svg"/>
+											<img class="star" src="res/icons/ic_star_black_24px.svg"/>
+											<img class="star" src="res/icons/ic_star_half_black_24px.svg"/>
+											<img class="star" src="res/icons/ic_star_border_black_24px.svg"/>
 									</div>
 								</div>
 								<?php
