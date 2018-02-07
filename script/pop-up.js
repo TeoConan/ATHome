@@ -25,7 +25,7 @@ function connect(){
 		text.style.opacity=1;
 	} else {
 		console.log('Connect to account');
-		// window.location.href = "http://localhost/projet/athome/account.php";
+		// window.location.href = "http://localhost/athome/account.php";
 		sendQuery('connexion.php?email='+ mail.value + '&password='+ password.value);
 	}
 	

@@ -1,5 +1,5 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 
 ?>
 
@@ -21,7 +21,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 	<main class="main-register">
 		<div class="inner">
 			<div class="logo">
-				<a href="/projet/athome/"> 
+				<a href="/athome/"> 
 					<img src="res/icons/logo_black.svg" alt="ATHome"/> 
 				</a> 
 			</div>

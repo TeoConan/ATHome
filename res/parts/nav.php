@@ -78,7 +78,7 @@
 
 	<div class="inner-header">
 		<div class="item-header">
-			<a class="logos" href="/projet/athome/">
+			<a class="logos" href="/athome/">
 				<img src="res/icons/logo.svg" class="logo" alt="logo">
 				<h1 class="main-title">ATHome</h1>
 			</a>

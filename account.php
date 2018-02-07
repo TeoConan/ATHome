@@ -1,14 +1,11 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 //require_once("/product/objects/user.php");
 //Faux current user
-
-PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
-
-userModel::connectUser("mariecrach@gmail.fr","coucou1bebe");
-
-$current = $_SESSION['user'];
-
+//userModel::connectUser("mariecrach@gmail.fr","coucou1bebe");
+//echo('User session = ');
+//var_dump($_SESSION['user']);
+$current = unserialize($_SESSION['user']);
 //Check
 $error = false;
 if(
@@ -18,6 +15,7 @@ if(
 ) {
 	$error = true;
 	header('Location: error.php');
+	//var_dump($current);
 } else {
 	
 }
@@ -117,6 +115,15 @@ if(
 				$settings->link = '/settings';
 				$settings->setBackground(0,0,0);
 				echo($settings->getOutput());
+				
+				?>
+			</div>
+			
+			<div class="row">
+				<?php
+					
+				$disconnect = new Button('Deconnexion', 'disconnect.php');
+				echo($disconnect->getOutput());
 				
 				?>
 			</div>
