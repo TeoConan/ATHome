@@ -1,6 +1,6 @@
 <?php
 
-require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 
 $command = new Button('Commander','#');
 ?>
