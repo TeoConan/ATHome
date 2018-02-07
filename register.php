@@ -1,5 +1,6 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
+
 ?>
 
 <!doctype html>
@@ -8,6 +9,8 @@ require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 <meta charset="utf-8">
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="icon" type="image/png" href="res/icons/logo.ico" />
+	<script type="text/javascript" src="res/vendors/jquery.min.js">
+	</script>
 	<title>ATHome - Inscription</title>
 </head>
 
@@ -18,7 +21,9 @@ require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 	<main class="main-register">
 		<div class="inner">
 			<div class="logo">
-				<img src="res/icons/logo_black.svg" alt="ATHome"/>
+				<a href="/projet/athome/"> 
+					<img src="res/icons/logo_black.svg" alt="ATHome"/> 
+				</a> 
 			</div>
 			
 			<form class=registration>
@@ -60,5 +65,8 @@ require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 				</form>
 		</div>
 	</main>
+	
+<script src="script/script.js"></script>	
+	
 </body>
 </html>
