@@ -27,7 +27,7 @@ function connect(){
 		console.log('Connect to account');
 		sendQuery('connexion.php?email='+ mail.value + '&password='+ password.value);
 		setTimeout(function(){
-			window.location.href = "http://localhost/projet/athome/account.php";
+			window.location.href = "http://localhost/athome/account.php";
 		}, 200);
 		
 	}

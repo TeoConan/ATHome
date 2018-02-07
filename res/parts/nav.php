@@ -103,14 +103,16 @@
 				<?php
 				
 				if (!empty($_SESSION['user'])){
+					$current = unserialize($_SESSION['user']);
+					
 					echo('
 					<a href="account.php">
 						<div class="inner">
 							<div class="name">
-								<h1>Téo Conan</h1>
+								<h1>' . $current->user_firstname . ' ' . $current->user_name . '</h1>
 							</div>
 
-							<div class="profil">
+							<div class="profil" style="background-image: url(../product/res/user/profil/' . $current->img_present . ');">
 
 							</div>
 						</div>
