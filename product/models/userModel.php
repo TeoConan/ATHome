@@ -106,8 +106,13 @@ class userModel {
 			echo "Erreur";
 		}else {
 			$output = self::convertObjToUser($get);
-			$_SESSION['user']= $output;
-			//header("Refresh:0; url=/projet/athome/");
+			if (session_status() == PHP_SESSION_NONE) {
+				session_start();
+			}
+			
+			$_SESSION['user']= serialize($output);
+			//echo('SESSION COMMITED : ' . var_dump($_SESSION['user']));
+			//header("Refresh:0; url=/athome/");
 		}
 	}		
 
@@ -133,7 +138,7 @@ class userModel {
 
 	public function disconnectUser(){
 		unset($_SESSION['user']);
-		header("Refresh:0; url=/projet/athome/");
+		header("Refresh:0; url=/athome/");
 	}
 	
 }

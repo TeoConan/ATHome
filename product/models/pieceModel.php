@@ -32,9 +32,9 @@ class pieceModel
 							$piece->label . "', '" .
 							$piece->brand . "', " .
 							$piece->stock . ", '" .
-							serialize($piece->services) . "', 
-							NULL, 
-							NULL
+							serialize($piece->services) . "', " .
+							$piece->type . ", " .
+							$piece->style . "
 							);");
 	}
 	
@@ -87,8 +87,8 @@ class pieceModel
 			$output->services = $obj->services;
 		}
 		
-		if(!empty($obj->price)){
-			$output->price = $obj->price;
+		if(!empty($obj->prix)){
+			$output->price = $obj->prix;
 		}
 		
 		if(!empty($obj->dimensions)){

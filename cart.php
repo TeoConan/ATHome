@@ -1,8 +1,7 @@
 <?php
 
-require("res/elements/box.php");
-require("res/elements/button.php");
-require("res/elements/cart_item.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
+
 ?>
 
 <!doctype html>

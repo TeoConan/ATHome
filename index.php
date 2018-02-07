@@ -1,10 +1,7 @@
 <?php
 
+require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 
-require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
-
-
-PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 ?>
 
 <!doctype html>
@@ -26,7 +23,7 @@ PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 			<div class="inner">
 				<h2 class="slogan"> L'ergonomie à porté de main </h2>
 				<?php 
-				$decouvrir = new Button('Découvrir','#');
+				$decouvrir = new Button('Découvrir','category.php');
 				echo ($decouvrir->getOutput());
 				?>
 			</div>
@@ -92,94 +89,6 @@ PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 						}
 						
 						?>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
-						
-						<li class="item-style">
-							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
-								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
-									<span class="title">Asiatique</span>
-								</div>
-							</a>
-						</li>
 					</ul>
 				</div>
 			</div>

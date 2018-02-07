@@ -701,10 +701,10 @@
 }
 
 .page-product,
-.page-product h2,
-.page-product h3,
-.page-product h4,
-.page-product p{
+.page-product .block-main h2,
+.page-product .block-main h3,
+.page-product .block-main h4,
+.page-product .block-main p{
 	color: black;
 }
 

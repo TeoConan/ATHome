@@ -1,6 +1,6 @@
 <?php
 
-require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 
 ?>
 
@@ -27,25 +27,21 @@ require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 				<div class="follow">
 					<p>Suivi</p>
 					<?php 
-				
-					PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 					
 					
 					
-						$user = new User();
-	
-						$user->id = "NULL";
-						$user->img_present = "../res/img/default.jpg";
-						$user->img_banner = "../res/img/architecture-3121009.jpg" ;
-						$user->date_registration = "2018-02-07";
-						$user->adresse = "10 route de chemellier";
-						$user->user_name = "Pouivet";
-						$user->user_firstname ="alexandre";
-						$user->user_mail ="alexpouivet@hotmail.fr";
-						$user->cart = "null";
-						$user->setPassword("123456abcdef");
+					$user = new User();
+					$user->img_present = "../res/img/default.jpg";
+					$user->img_banner = "../res/img/architecture-3121009.jpg" ;
+					$user->date_registration = "2018-02-07";
+					$user->adresse = "10 route de chemellier";
+					$user->user_name = "Pouivet Conan Tirault";
+					$user->user_firstname ="alexandre";
+					$user->user_mail ="alexpouivet@hotmail.fr";
+					$user->cart = "null";
+					$user->setPassword("123456abcdef");
 					
-					userModel::newUser($user);
+					//userModel::newUser($user);
 					
 					/* userModel::newUser($user); */
 					
@@ -57,6 +53,39 @@ require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 					
 					$get = PDOModel::getAllSQL("user", "*");
 					echo("L'adresse de l'objet 0 : " . $get[0]->adresse);*/
+					
+					
+						$piece = new Piece();
+						$piece->img_present	= "element_1.jpg";
+						$piece->img_slide	= array(
+												"furniture-2603068_1920.jpg",
+												"living-room-2155376_1920.jpg",
+												"living-room-2583032_1920.jpg"
+											);
+						$piece->ref			= "55QG";
+						$piece->label		= "Chaise ";
+						$piece->brand		= "Gauthier";
+						$piece->stock		= 16;
+						$piece->services	= array(
+												"livraison"	=>	false,
+												"donation"	=>	true,
+												"eco"		=>	false,
+												"made"		=>	true,
+											);
+						$piece->price		= 79;
+						$piece->dimensions	= array(
+												"largeur"	=>	188,
+												"hauteur"	=>	288,
+											);
+						$piece->style		= 2;
+						$piece->type		= 3;
+					
+					//pieceModel::newPiece($piece);
+					
+					$current = pieceModel::getPiece(0);
+
+					var_dump($current);
+	
 					?>
 				</div>
 				<div class="error">
