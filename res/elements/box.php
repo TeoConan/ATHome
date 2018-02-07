@@ -30,6 +30,7 @@ class Box
 		switch($type){
 			case Box::BOX_TYPE_DEFAULT :
 				$this->class = 'box';
+				$this->bg_color = 'rgba(0, 0, 0, 0.33)';
 				break;
 				
 			case Box::BOX_TYPE_LARGE :
@@ -152,8 +153,12 @@ class Box
 	public function setID($id){$this->_id = $id;}
 	
 	//Couleur et opacité du background
-	public function setBackground($r, $v, $b){
-		$this->bg_color = 'rgba(' . $r . ', ' . $v . ', ' . $b . ', 0.5)';
+	public function setBackground($rvb){
+		
+		if(empty($rvb)){
+			$rvb = "0, 0, 0";
+		}
+		$this->bg_color = 'rgba(' . $rvb . ', 0.33)';
 	}
 	
 	/* Doc */

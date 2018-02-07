@@ -3,6 +3,8 @@
 
 require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 
+
+PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 ?>
 
 <!doctype html>
@@ -41,81 +43,27 @@ require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 			<div class="row">
 				<div class="inner">
 					<ul class="list-styles">
-						<li class="item-style">
-							<?php
-							$asiat = new Box('Asiatique', "res/img/style_asiatique.jpg");
-							$asiat->link = "/product.php?style=asiatique";
-							$asiat->setBackground(107, 11, 12);
-
-							echo($asiat->getOutput());
-							?>
-						</li>
+					
+						<?php
 						
-						<li class="item-style">
-							<?php
-							$wood = new Box('Bois', "res/img/style_bois.jpg");
-							$wood->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(83, 71, 65, 0.33)";
-							$wood->setBackground(83, 71, 65);
+						/* Styles */
 
-							echo($wood->getOutput());
-							?>
-						</li>
+						$styles = styleModel::getAllStyles();
 						
-						<li class="item-style">
-							<?php
-							$classic = new Box('Classique chic', "res/img/style_classic_chic.jpg");
-							$classic->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(199, 178, 153, 0.33)";
-							$classic->setBackground(199, 178, 153);
-
-							echo($classic->getOutput());
-							?>
-						</li>
+						foreach($styles as $element){
+							$out = new Box($element->label, "product/res/style/" . $element->img_present);
+							$out->link = "product.php?style=" . ($element->label);
+							
+							if(!empty($element->color_overlay)){
+								$out->setBackground($element->color_overlay);
+							}
+							
+							echo('<li class="item-style">');
+							echo($out->getOutput());
+							echo('</li>');
+						}
 						
-						<li class="item-style">
-							<?php
-							$colored = new Box('Coloré', "res/img/style_coloré.jpg");
-							$colored->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(62, 39, 35, 0.33)";
-							$colored->setBackground(62,39,35);
-
-							echo($colored->getOutput());
-							?>
-						</li>
-						
-						<li class="item-style">
-							<?php
-							$indus = new Box('Industriel', "res/img/style_industriel.jpg");
-							$indus->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(173, 20, 87, 0.33)";
-							$indus->setBackground(173, 20, 87);
-
-							echo($indus->getOutput());
-							?>
-						</li>
-						
-						<li class="item-style">
-							<?php
-							$mordern = new Box('Moderne', "res/img/style_moderne.jpg");
-							$mordern->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(35, 35, 34, 0.33)";
-							$mordern->setBackground(35, 35, 34);
-
-							echo($mordern->getOutput());
-							?>
-						</li>
-						
-						<li class="item-style">
-							<?php
-							$vintage = new Box('Vintage', "res/img/style_vintage.jpg");
-							$vintage->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(38, 166, 154, 0.33)";
-							$vintage->setBackground(38, 166, 154);
-
-							echo($vintage->getOutput());
-							?>
-						</li>
+						?>
 					</ul>
 				</div>
 			</div>
@@ -123,81 +71,114 @@ require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 			<div class="row">
 				<div class="inner">
 					<ul class="list-styles">
-						<li class="item-style">
-							<?php
-							$table = new Box('Table', "res/img/type_table.jpg");
-							$table->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(107, 11, 12, 0.33)";
-							$table->setBackground(167, 167, 167);
+					
+						<?php
+						
+						/* Styles */
 
-							echo($table->getOutput());
-							?>
+						$types = typeModel::getAllTypes();
+						
+						foreach($types as $element){
+							$out = new Box($element->label, "product/res/type/" . $element->img_present);
+							$out->link = "product.php?type=" . ($element->label);
+							
+							if(!empty($element->color_overlay)){
+								$out->setBackground($element->color_overlay);
+							}
+							
+							echo('<li class="item-style">');
+							echo($out->getOutput());
+							echo('</li>');
+						}
+						
+						?>
+						
+						<li class="item-style">
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
 						</li>
 						
 						<li class="item-style">
-							<?php
-							$table_b = new Box('Table basse', "res/img/type_table_basse.jpg");
-							$table_b->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(83, 71, 65, 0.33)";
-							$table_b->setBackground(154, 154, 154);
-
-							echo($table_b->getOutput());
-							?>
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
 						</li>
 						
 						<li class="item-style">
-							<?php
-							$bed = new Box('Lit', "res/img/type_lit.jpg");
-							$bed->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(199, 178, 153, 0.33)";
-							$bed->setBackground(218, 218, 218);
-
-							echo($bed->getOutput());
-							?>
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
 						</li>
 						
 						<li class="item-style">
-							<?php
-							$commode = new Box('Commode', "res/img/type_commode.jpg");
-							$commode->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(62, 39, 35, 0.33)";
-							$commode->setBackground(61,61,61);
-
-							echo($commode->getOutput());
-							?>
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
 						</li>
 						
 						<li class="item-style">
-							<?php
-							$chair = new Box('Chaise', "res/img/type_chaise.jpg");
-							$chair->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(173, 20, 87, 0.33)";
-							$chair->setBackground(154, 154, 154);
-
-							echo($chair->getOutput());
-							?>
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
 						</li>
 						
 						<li class="item-style">
-							<?php
-							$asiat = new Box('Canapé', "res/img/type_canape.jpg");
-							$asiat->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(35, 35, 34, 0.33)";
-							$asiat->setBackground(96, 57, 19);
-
-							echo($asiat->getOutput());
-							?>
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
 						</li>
 						
 						<li class="item-style">
-							<?php
-							$asiat = new Box('Bureau', "res/img/type_bureau.jpg");
-							$asiat->link = "/product.php?style=asiatique";
-							//$asiat->bg_color = "rgba(38, 166, 154, 0.33)";
-							$asiat->setBackground(0, 0, 0);
-
-							echo($asiat->getOutput());
-							?>
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
+						</li>
+						
+						<li class="item-style">
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
+						</li>
+						
+						<li class="item-style">
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
+						</li>
+						
+						<li class="item-style">
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
+						</li>
+						
+						<li class="item-style">
+							<a href="product.php?style=Asiatique" class="box" style=" background-image : url('product/res/style/style_asiatique.jpg');">
+								<div class="inner" style="background: rgba(107, 11, 12, 0.33);">
+									<span class="title">Asiatique</span>
+								</div>
+							</a>
 						</li>
 					</ul>
 				</div>
