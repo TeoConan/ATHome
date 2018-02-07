@@ -47,13 +47,13 @@ require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 					
 					<div class="reg-password confirm">
 						<p>
-							<input type="password" name="reg-password" class="form" id="reg-password" placeholder="Confirmer votre mot de passe" maxlength="40">
+							<input type="password" name="reg-password-conf" class="form" id="reg-password-conf" placeholder="Confirmer votre mot de passe" maxlength="40">
 						</p>
 					</div>
 					<p class="error">Erreur de syntaxe</p>
 					
 					<?php
-					$but_reg = new Button('Inscrition', 'javascript:register()');
+					$but_reg = new Button('Inscription', 'javascript:register()');
 					$but_reg->setID('button_resgistration');
 					echo($but_reg->getOutput());
 					?>
