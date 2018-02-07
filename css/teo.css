@@ -83,6 +83,7 @@
 	width: 100%;
 	/*justify-content: space-between;*/
 	overflow-x: scroll;
+	transition: all .5s ease-in-out;
 }
 
 /* Scroll*/
@@ -102,6 +103,7 @@
 
 .page-home .block-main .row > .inner > .list-styles::-webkit-scrollbar-thumb {
 	background: rgba(0,0,0,0.00);
+	
 }
 
 .page-home .block-main .row > .inner > .list-styles::-webkit-scrollbar-thumb:hover {
