@@ -923,9 +923,157 @@
 
 /* Profil */
 
-.page-product .profile img {
-	width: 55px;
+.page-product .comment {
+	margin-top: 30px;
+	margin-left: 20px;
+	display: flex;
 }
+
+.page-product .profile {
+	background-image: url(../res/img/blue-2705642_1920.jpg);
+	border-radius: 50%;
+	background-position: center;
+	background-size: cover;
+	width:70px;
+	height:70px;
+	min-width: 70px;
+	min-height:70px;
+}
+
+.page-product .head {
+	display:flex;
+}
+
+.page-product > .inner {
+	margin-left: 20px;
+}
+
+.page-product .name,
+.page-product .date,
+.page-product .stars-avis {
+	margin: auto 20px;
+}
+
+.page-product .name {
+	margin-left: 0px;
+}
+
+.page-product .descr p {
+	width: 1200px;
+}
+
+.page-product .avis {
+	display: flex;
+}
+
+.page-product #note {
+	width: 500px;
+	height: 100px;
+	resize: none;
+	color: grey;
+	border-radius: 10px;
+}
+
+.page-product .note_name{
+	margin-bottom: 10px;
+	margin-top: -20px;
+}
+.page-product .stars {
+	margin-left: 40px;
+}
+
+.page-product #bt_add_note {
+	margin-top: 20px;
+}
+
+.page-product .row_suggestions {
+	margin: auto;
+}
+
+.page-product .produits-similaires {
+	display: flex;
+}
+
+.page-product .produit {
+	margin :0 30px auto 30px;
+}
+
+.page-product .suggestions {
+	padding: 30px 0 50px;
+	background-color: white;
+	width: 1400px;
+	margin-bottom: 60px;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
+}
+
+.page-product .liste-produits {
+	display: flex;
+	margin: auto;
+}
+
+.page-product .titre_suggestions {
+	margin-bottom: 35px;
+}
+
+.page-product .title {
+	max-width: 155px;
+	height: 70px;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 16px;;
+}
+
+.page-product .price {
+	font-family: 'Segoe UI', sans-serif;
+	font-weight: bold;
+}
+
+
+/* Onglet */
+
+.onglet
+        {
+                display:inline-block;
+                margin-left:3px;
+                margin-right:3px;
+                padding:3px;
+                border:1px solid black;
+                cursor:pointer;
+        }
+        .onglet_0
+        {
+                background:#bbbbbb;
+                border-bottom:1px solid black;
+        }
+        .onglet_1
+        {
+                background:#dddddd;
+                border-bottom:0px solid black;
+                padding-bottom:4px;
+        }
+        .contenu_onglet
+        {
+                background-color:#dddddd;
+                border:1px solid black;
+                margin-top:-1px;
+                padding:5px;
+                display:none;
+        }
+        .ul
+        {
+                margin-top:0px;
+                margin-bottom:0px;
+                margin-left:-10px
+        }
+        .h1
+        {
+                margin:0px;
+                padding:0px;
+        }
+
+
+
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 18 Janvier 2018 à 14:19
+-- Généré le :  Lun 05 Février 2018 à 12:30
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.1
 
@@ -79,6 +79,13 @@ CREATE TABLE `piece` (
   `id_piece_style` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `piece`
+--
+
+INSERT INTO `piece` (`prix`, `dimensions`, `img_present`, `img_slide`, `ref`, `id`, `label`, `brand`, `stock`, `services`, `id_piece_type`, `id_piece_style`) VALUES
+(1, '{\'Largeur\' : 188, \'Hauteur\' : 166}', 'element_1.jpg', 'furniture-2603068_1920.jpg;living-room-2155376_1920.jpg;living-room-2583032_1920', '55GQ', 0, 'Table Gauthier 55GQ', 'Gauthier', 16, '{\'livraison\'  : false}', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -91,6 +98,13 @@ CREATE TABLE `piece_style` (
   `img_presents` text,
   `color_overlay` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `piece_style`
+--
+
+INSERT INTO `piece_style` (`id`, `label`, `img_presents`, `color_overlay`) VALUES
+(0, 'Asiatique', 'style_asiatique.jpg', 7015180);
 
 -- --------------------------------------------------------
 
@@ -126,6 +140,20 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Contenu de la table `user`
+--
+
+INSERT INTO `user` (`id`, `img_present`, `img_banner`, `date_registration`, `adresse`, `user_name`, `user_firstname`, `user_mail`, `user_password`, `delivery_history_id`, `id_cart`) VALUES
+(1, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL),
+(2, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL),
+(3, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL),
+(4, 'Bonsoireu', 'Hello', '2018-01-10', 'cucu', 'dfvergbnth,yjk;ve', 'vfegbr,tjhyuve', 'dcfvgbrhnty,juk;rev', 'd fghjklre', NULL, NULL),
+(5, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL),
+(6, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL),
+(7, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL),
+(8, 'sfbdg,h;jk', 'fbdg,h;jk', '2018-01-10', 'sfdgbdfnh,j', 'dfvergbnth,yjk;', 'vfegbr,tjhyu', 'dcfvgbrhnty,juk;', 'd fghjkl', NULL, NULL);
+
+--
 -- Index pour les tables exportées
 --
 
@@ -135,6 +163,9 @@ CREATE TABLE `user` (
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_cart_id_user` (`id_user`);
+  
+ALTER TABLE `cart`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Index pour la table `cart_relation`
@@ -143,14 +174,18 @@ ALTER TABLE `cart_relation`
   ADD PRIMARY KEY (`id`,`id_cart`),
   ADD KEY `FK_cart_relation_id_cart` (`id_cart`);
 
+ALTER TABLE `cart_relation`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Index pour la table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_comments_id_user` (`id_user`),
-  ADD KEY `FK_comments_id_piece` (`id_piece`);
+  ADD KEY `FK_comments_id_piece` (`id_piece`),
+  ADD KEY `FK_comments_id_user` (`id_user`);
 
+ALTER TABLE `comments`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Index pour la table `piece`
 --
@@ -158,12 +193,18 @@ ALTER TABLE `piece`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_piece_id_piece_type` (`id_piece_type`),
   ADD KEY `FK_piece_id_piece_style` (`id_piece_style`);
-
+  
+  
+  ALTER TABLE `piece`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Index pour la table `piece_style`
 --
 ALTER TABLE `piece_style`
   ADD PRIMARY KEY (`id`);
+  
+ALTER TABLE `piece_style`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Index pour la table `piece_type`
@@ -171,6 +212,8 @@ ALTER TABLE `piece_style`
 ALTER TABLE `piece_type`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `piece_type`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Index pour la table `user`
 --
@@ -178,6 +221,17 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_user_id_cart` (`id_cart`);
 
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  
+  
 --
 -- Contraintes pour les tables exportées
 --

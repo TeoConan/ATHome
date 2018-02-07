@@ -64,12 +64,12 @@ class PDOModel
 			$select = "`" . $select . "`";
 		}
 		
-		$query = 'SELECT ' . $select . ' FROM `' . $table . '` ';
+		$query = 'SELECT ' . $select . ' FROM ' . $table . ' ';
 		
 		if($where != false) {
 			$query .= ' WHERE ' . $where;
 		}
-		echo('<br>Query : ' . $query . ' <br>');
+ 		//echo('<br>pdoModel : Query : ' . $query . ' <br>');
 		$output = self::returnSQL($query);
 		return($output->fetch());
 	}
@@ -86,18 +86,8 @@ class PDOModel
 	
 	//Executer une requete SQL
 	public static function exeSQL($query){
-		echo('Query = ' . $query);
+		//echo $query;
 		return (self::$link->query($query));
-	}
-	
-	public static function deleteSQL($table, $where){
-		
-		if ($where == ""){
-			//Error
-		} else {
-			$query = "DELETE FROM `" . $table . "` WHERE " . $where . ";";
-			self::exeSQL($query);
-		}
 	}
 	
 	//Mettre à jour la BDD

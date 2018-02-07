@@ -1,4 +1,5 @@
 <?php
+
 class User {
 	
 	public $id;					// Id de l'utilisateur
@@ -10,7 +11,7 @@ class User {
 	public $user_firstname;		// Prénom de l'utilisateur
 	public $user_mail;			// Mail de l'utilisateur
 	public $cart;				// Panier associé à l'utilisateur
-	private $user_password;		// Mot de passe de l'utilisateur
+	public $user_password;		// Mot de passe de l'utilisateur
 		
 	
 	// retourne le mot de passe 

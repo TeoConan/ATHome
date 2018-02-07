@@ -1,33 +1,16 @@
 <?php
-
-require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
-
-
-
+require($_SERVER['DOCUMENT_ROOT'] . "/projet/athome/product/link.php");
 //require_once("/product/objects/user.php");
 //Faux current user
-//$current = $_SESSION['user'];
 
-$user = new User();
-$user->id = 1;
-$user->img_present = "blue-2705642_1920.jpg";
-$user->img_banner = "make-up-2137800.jpg";
-$user->date_registration = "2018-02-05";
-$user->adresse = "10 rue salutations";
-$user->user_name = "Crack";
-$user->user_firstname ="marie";
-$user->user_mail ="mariecrach@gmail.fr";
-$user->cart = "null";
-$user->setPassword("coucou1bébé");
+PDOModel::connectDB("127.0.0.1", "athome_user", "zr505CglHCODsIpG", "athome");
 
-$_SESSION['user'] = $user;
+userModel::connectUser("mariecrach@gmail.fr","coucou1bebe");
 
 $current = $_SESSION['user'];
 
 //Check
-
 $error = false;
-
 if(
 	empty($current->user_mail) ||
 	empty($current->user_firstname) ||
@@ -38,17 +21,6 @@ if(
 } else {
 	
 }
-
-//Images
-
-if(empty($current->img_banner)){
-	$current->img_banner = "default.jpg";
-}
-
-if(empty($current->img_present)){
-	$current->img_present = "default.jpg";
-}
-
 ?>
 
 <!doctype html>
@@ -154,41 +126,3 @@ if(empty($current->img_present)){
 	<script type="text/javascript" src="script/script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
