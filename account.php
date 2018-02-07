@@ -1,11 +1,9 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
-//require_once("/product/objects/user.php");
-//Faux current user
-//userModel::connectUser("mariecrach@gmail.fr","coucou1bebe");
-//echo('User session = ');
-//var_dump($_SESSION['user']);
+
 $current = unserialize($_SESSION['user']);
+
+
 //Check
 $error = false;
 if(
@@ -14,8 +12,9 @@ if(
 	empty($current->user_name)
 ) {
 	$error = true;
-	header('Location: error.php');
-	//var_dump($current);
+	header('Location: error.php?error=account, object empty var_dump:' . print_r($current));
+	
+	
 } else {
 	
 }

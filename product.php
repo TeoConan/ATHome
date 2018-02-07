@@ -7,17 +7,17 @@ $idpiece = $_GET['id'];
 $error = false;
 
 if (!isset($_GET['id'])){
-	$error = true;
-	header('Location: error.php');
+    $error = true;
+    header('Location: error.php?error=product, id not set');
 }
 
-$current = pieceModel::getPiece($idpiece);
+$current_piece = pieceModel::getPiece($idpiece);
 
-//var_dump($current);
+//var_dump($current_piece);
 
-if(!isset($current->price)){
-	$error = true;
-	header('Location: error.php');
+if(!isset($current_piece->price)){
+    $error = true;
+    header('Location: error.php?error=product, price not set');
 }
 
 ?>
@@ -26,73 +26,73 @@ if(!isset($current->price)){
 <html>
 <head>
 <meta charset="utf-8">
-	<title>ATHome - [MEUBLE]</title>
-	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="icon" type="image/png" href="res/icons/logo.ico" />
-	<script type="text/javascript" src="res/vendors/jquery.min.js">
-	</script>
+    <title>ATHome - [MEUBLE]</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="icon" type="image/png" href="res/icons/logo.ico" />
+    <script type="text/javascript" src="res/vendors/jquery.min.js">
+    </script>
 </head>
 <body class="page-product">
 
-	<?php include('res/parts/nav.php'); ?>
-	
-	<div class="slider">
-		<div class="popup">
-			<div class="overlay"></div>
-			<div class="inner">
-				<img src="res/img/architecture-2558994_1920.jpg"/>
-			</div>
-		</div>
-		<div class="overlay">
-			<div class="inner">
-				<h2 class="slogan"></h2>
-			</div>
-			
-			<img class="previous" src="res/icons/ic_keyboard_arrow_left_white_24px.svg"/>
-			<img class="next" src="res/icons/ic_keyboard_arrow_right_white_24px.svg"/>
-			
-			<img class="zoom" src="res/icons/ic_search_white_24px.svg"/>
+    <?php include('res/parts/nav.php'); ?>
+    
+    <div class="slider">
+        <div class="popup">
+            <div class="overlay"></div>
+            <div class="inner">
+                <img src="res/img/architecture-2558994_1920.jpg"/>
+            </div>
+        </div>
+        <div class="overlay">
+            <div class="inner">
+                <h2 class="slogan"></h2>
+            </div>
+            
+            <img class="previous" src="res/icons/ic_keyboard_arrow_left_white_24px.svg"/>
+            <img class="next" src="res/icons/ic_keyboard_arrow_right_white_24px.svg"/>
+            
+            <img class="zoom" src="res/icons/ic_search_white_24px.svg"/>
 
-			<div class="pagination">
-				<div class="dot"></div>
-				<div class="dot"></div>
-				<div class="dot"></div>
-				<div class="dot"></div>
-			</div>
-		</div>	
-	</div>
+            <div class="pagination">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>    
+    </div>
 
-	<main class="block-main">
-		<div class="inner">
-			<!-- Price title and add -->
-			<div class="row">
-				<div class="inner">
-					<div class="card">
-						<div class="inner">
-							<div class="item title">
-								<h2><?php echo($current->label); ?></h2>
-								<h3><?php echo($current->brand .  " " . $current->ref); ?></h3>
-							</div>
-							
-							<div class="item price">
-								<div class="price">
-									<h1><?php echo($current->price); ?><span>€</span></h1>	
-								</div>
-							</div>
-							
-							<div class="item add">
-								<?php
-								
-								$add = new Button("Ajouter", '');
-								$add->click = '';
-								echo($add->getOutput());
-								
-								?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+    <main class="block-main">
+        <div class="inner">
+            <!-- Price title and add -->
+            <div class="row">
+                <div class="inner">
+                    <div class="card">
+                        <div class="inner">
+                            <div class="item title">
+                                <h2><?php echo($current_piece->label); ?></h2>
+                                <h3><?php echo($current_piece->brand .  " " . $current_piece->ref); ?></h3>
+                            </div>
+                            
+                            <div class="item price">
+                                <div class="price">    
+                                    <h1><?php echo($current_piece->price); ?><span>€</span></h1>    
+                                </div>
+                            </div>
+                            
+                            <div class="item add">
+                                <?php
+                                
+                                $add = new Button("Ajouter", '');
+                                $add->click = '';
+                                echo($add->getOutput());
+                                
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 			
 			<div class="row comment-descr" style="display: none;">
 				<div class="inner">

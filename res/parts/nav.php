@@ -29,7 +29,7 @@
 					echo($but_connect->getOutput());
 					?>
 				</form>	
-				<a href="#" class="inscription">Inscription</a>
+				<a href="register.php" class="inscription">Inscription</a>
 				
 				<!-- <form class=registration>
 					
@@ -78,7 +78,7 @@
 
 	<div class="inner-header">
 		<div class="item-header">
-			<a class="logos" href="/athome/">
+			<a class="logos" href="index.php">
 				<img src="res/icons/logo.svg" class="logo" alt="logo">
 				<h1 class="main-title">ATHome</h1>
 			</a>
@@ -99,14 +99,40 @@
 			</nav>
 		</div>
 		<div class="item-header">
-			<div class="search">
+			<div class="account">
 				<?php
+				
+				
+				if (!empty($_SESSION['user'])){
+					
+					$current = unserialize($_SESSION['user']);
+					
+					echo('
+					<a href="account.php">
+						<div class="inner">
+							<div class="name">
+								<h1>' . $current->user_firstname . ' ' . $current->user_name . '</h1>
+							</div>
+
+							<div class="profil" style="background-image: url(product/res/user/profil/' . $current->img_present . ');">
+
+							</div>
+						</div>
+					</a>
+					');
+				} else {
+					$connect = new Button('Se connecter', 'javascript:showPopup()');
+					$connect->setID('bt_connect');
+					echo($connect->getOutput());
+				}
 							
-				$connect = new Button('Se connecter', 'javascript:showPopup()');
-				$connect->setID('bt_connect');
-				echo($connect->getOutput());
+				
 	
 				?>
+			</div>
+			
+			<div class="search">
+				
 				<img src="res/icons/ic_search_white_24px.svg" class="button_search" alt="search">
 			</div>
 		</div>

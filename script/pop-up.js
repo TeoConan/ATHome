@@ -25,8 +25,11 @@ function connect(){
 		text.style.opacity=1;
 	} else {
 		console.log('Connect to account');
-		// window.location.href = "http://localhost/athome/account.php";
 		sendQuery('connexion.php?email='+ mail.value + '&password='+ password.value);
+		setTimeout(function(){
+			window.location.href = "http://localhost/athome/account.php";
+		}, 200);
+		
 	}
 	
 }

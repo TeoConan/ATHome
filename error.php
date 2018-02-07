@@ -25,6 +25,7 @@ require($_SERVER['DOCUMENT_ROOT'] . "/athome/product/link.php");
 					
 					<div class="error">
 						<h1>Une erreur est survenu</h1>
+						<p><?php echo($_GET['error'])?></p>
 					</div>
 					
 					<?php

@@ -43,12 +43,11 @@ function register(){
 		xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange=function() {
 			if (this.readyState == 4 && this.status == 200) {
-				
+				console.log(this.responseText);
+				console.log("ShowMessage response = ");
 				if (this.responseText == "connected"){
 					window.location.replace("account.php");
 				}
-				console.log("ShowMessage response = ");
-				console.log(this.responseText);
 			}
 		};
 
