@@ -126,12 +126,13 @@
 
 .block-header .inner-header {
 	display: flex;
-	padding: 15px 120px;
+	padding: 0px 120px;
 }
 
 .block-header .item-header { /* On donne une taille de 33% aux items pour pouvoir bien positionner les éléments enfants */
 	display: flex;
 	width: 33%;
+	padding: 15px 0;
 }
 
 /* Partie Logos */
@@ -141,7 +142,7 @@
 }
 
 .block-header .logo {
-	height: 75px;
+	height: 55px;
 	margin: auto 0;
 }
 

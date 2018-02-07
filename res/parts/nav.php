@@ -78,7 +78,7 @@
 
 	<div class="inner-header">
 		<div class="item-header">
-			<a class="logos" href="/projet/athome/">
+			<a class="logos" href="/athome/">
 				<img src="res/icons/logo.svg" class="logo" alt="logo">
 				<h1 class="main-title">ATHome</h1>
 			</a>
@@ -99,14 +99,36 @@
 			</nav>
 		</div>
 		<div class="item-header">
-			<div class="search">
+			<div class="account">
 				<?php
+				
+				if (!empty($_SESSION['user'])){
+					echo('
+					<a href="account.php">
+						<div class="inner">
+							<div class="name">
+								<h1>Téo Conan</h1>
+							</div>
+
+							<div class="profil">
+
+							</div>
+						</div>
+					</a>
+					');
+				} else {
+					$connect = new Button('Se connecter', 'javascript:showPopup()');
+					$connect->setID('bt_connect');
+					echo($connect->getOutput());
+				}
 							
-				$connect = new Button('Se connecter', 'javascript:showPopup()');
-				$connect->setID('bt_connect');
-				echo($connect->getOutput());
+				
 	
 				?>
+			</div>
+			
+			<div class="search">
+				
 				<img src="res/icons/ic_search_white_24px.svg" class="button_search" alt="search">
 			</div>
 		</div>
